@@ -6,189 +6,36 @@
     <title>PelisVIP Premium</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        :root { 
-            --bg: #000000;
-            --surface: #121214; 
-            --blue: #0071e3; 
-            --green: #25D366; 
-            --gray: #86868b; 
-        }
-        body { 
-            background: var(--bg); 
-            color: #fff; 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            overflow-x: hidden; 
-        }
+        :root { --bg: #000000; --surface: #121214; --blue: #0071e3; --green: #25D366; --gray: #86868b; }
+        body { background: var(--bg); color: #fff; font-family: 'Plus Jakarta Sans', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
         
-        header { 
-            position: sticky; 
-            top: 0; 
-            background: rgba(0,0,0,0.95); 
-            backdrop-filter: blur(20px); 
-            z-index: 100; 
-            padding: 15px 20px; 
-            border-bottom: 0.5px solid #222; 
-        }
-        .header-top { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            margin-bottom: 12px; 
-        }
-        .logo { 
-            font-weight: 800; 
-            font-size: 22px; 
-        }
-        .logo span { 
-            color: var(--blue); 
-        }
+        header { position: sticky; top: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); z-index: 100; padding: 15px 20px; border-bottom: 0.5px solid #222; }
+        .header-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .logo { font-weight: 800; font-size: 22px; }
+        .logo span { color: var(--blue); }
         
-        .header-btns { 
-            display: flex; 
-            gap: 8px; 
-        }
-        .btn-icon { 
-            background: var(--surface); 
-            border: 1px solid #333; 
-            color: white; 
-            padding: 8px; 
-            border-radius: 10px; 
-            display: flex; 
-            align-items: center; 
-            cursor: pointer; 
-            outline: none;
-        }
-        .btn-share-app { 
-            background: var(--green); 
-            color: white; 
-            border: none; 
-            padding: 8px 12px; 
-            border-radius: 10px; 
-            font-size: 11px; 
-            font-weight: 800; 
-            display: flex; 
-            align-items: center; 
-            gap: 5px; 
-            cursor: pointer; 
-            outline: none;
-        }
+        .header-btns { display: flex; gap: 8px; }
+        .btn-icon { background: var(--surface); border: 1px solid #333; color: white; padding: 8px; border-radius: 10px; display: flex; align-items: center; cursor: pointer; outline: none; }
+        .btn-share-app { background: var(--green); color: white; border: none; padding: 8px 12px; border-radius: 10px; font-size: 11px; font-weight: 800; display: flex; align-items: center; gap: 5px; cursor: pointer; outline: none; }
         
-        .search-box { 
-            background: var(--surface); 
-            border-radius: 10px; 
-            padding: 8px 15px; 
-            display: flex; 
-            border: 1px solid #222; 
-        }
-        .search-box input { 
-            background: transparent; 
-            border: none; 
-            color: white; 
-            width: 100%; 
-            outline: none; 
-            font-size: 15px; 
-        }
+        .search-box { background: var(--surface); border-radius: 10px; padding: 8px 15px; display: flex; border: 1px solid #222; }
+        .search-box input { background: transparent; border: none; color: white; width: 100%; outline: none; font-size: 15px; }
 
-        .genre-container { 
-            display: flex; 
-            overflow-x: auto; 
-            padding: 10px 20px; 
-            gap: 10px; 
-            position: sticky; 
-            top: 115px; 
-            background: var(--bg); 
-            z-index: 90; 
-            scrollbar-width: none; 
-            border-bottom: 0.5px solid #111; 
-            align-items: center; 
-        }
-        .genre-pill { 
-            background: var(--surface); 
-            padding: 8px 16px; 
-            border-radius: 20px; 
-            font-size: 12px; 
-            font-weight: 600; 
-            white-space: nowrap; 
-            border: 1px solid #222; 
-            color: var(--gray); 
-            cursor: pointer; 
-            text-decoration: none; 
-            display: inline-block; 
-            outline: none;
-        }
-        .genre-pill.active { 
-            background: var(--blue); 
-            color: white; 
-            border-color: var(--blue); 
-        }
-        .btn-tv-special { 
-            background: linear-gradient(45deg, #ff0000, #b30000); 
-            color: white; 
-            border: none; 
-        }
+        .genre-container { display: flex; overflow-x: auto; padding: 10px 20px; gap: 10px; position: sticky; top: 115px; background: var(--bg); z-index: 90; scrollbar-width: none; border-bottom: 0.5px solid #111; align-items: center; }
+        .genre-pill { background: var(--surface); padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; white-space: nowrap; border: 1px solid #222; color: var(--gray); cursor: pointer; text-decoration: none; display: inline-block; outline: none; }
+        .genre-pill.active { background: var(--blue); color: white; border-color: var(--blue); }
+        .btn-tv-special { background: linear-gradient(45deg, #ff0000, #b30000); color: white; border: none; }
 
-        .section-title { 
-            padding: 20px 20px 10px; 
-            font-size: 18px; 
-            font-weight: 800; 
-            letter-spacing: -0.5px; 
-        }
-        .carousel { 
-            display: flex; 
-            overflow-x: auto; 
-            padding: 0 20px 25px; 
-            gap: 15px; 
-            scrollbar-width: none; 
-        }
-        .grid-view { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(105px, 1fr)); 
-            gap: 15px; 
-            padding: 20px; 
-        }
+        .section-title { padding: 20px 20px 10px; font-size: 18px; font-weight: 800; letter-spacing: -0.5px; }
+        .carousel { display: flex; overflow-x: auto; padding: 0 20px 25px; gap: 15px; scrollbar-width: none; }
         
-        .movie-card { 
-            width: 110px; 
-            flex-shrink: 0; 
-            cursor: pointer; 
-            outline: none;
-            border: 2px solid transparent;
-            border-radius: 14px;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-        .img-container { 
-            width: 100%; 
-            aspect-ratio: 2/3; 
-            border-radius: 12px; 
-            background: #1c1c1e; 
-            overflow: hidden; 
-            border: 0.5px solid #333; 
-            position: relative; 
-        }
-        .img-container img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-            opacity: 0; 
-            transition: opacity 0.4s ease-in; 
-        }
-        .img-container img.loaded { 
-            opacity: 1; 
-        }
-        .movie-card span { 
-            display: block; 
-            font-size: 11px; 
-            margin-top: 8px; 
-            text-align: center; 
-            text-overflow: ellipsis; 
-            white-space: nowrap; 
-            overflow: hidden; 
-            font-weight: 600; 
-        }
+        .movie-card { width: 110px; flex-shrink: 0; cursor: pointer; outline: none; border: 2px solid transparent; border-radius: 14px; transition: transform 0.2s ease, border-color 0.2s ease; }
+        .img-container { width: 100%; aspect-ratio: 2/3; border-radius: 12px; background: #1c1c1e; overflow: hidden; border: 0.5px solid #333; position: relative; }
+        .img-container img { width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.4s ease-in; }
+        .img-container img.loaded { opacity: 1; }
+        .movie-card span { display: block; font-size: 11px; margin-top: 8px; text-align: center; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; font-weight: 600; }
 
-        /* EFECTO DE ENFOQUE PARA MANDOS DE TV */
+        /* EFECTO DE ENFOQUE PARA CONTROLES REMOTOS */
         .movie-card:focus, .btn-icon:focus, .btn-share-app:focus, .genre-pill:focus, .focusable:focus, .btn-main-play:focus, .btn-close:focus {
             border-color: var(--blue) !important;
             box-shadow: 0 0 15px var(--blue) !important;
@@ -196,127 +43,20 @@
             outline: none;
         }
 
-        #details-view, #tutorial-view { 
-            position: fixed; 
-            inset: 0; 
-            background: var(--bg); 
-            z-index: 500; 
-            display: none; 
-            overflow-y: auto; 
-        }
-        .hero { 
-            height: 45vh; 
-            background-size: cover; 
-            background-position: center; 
-            position: relative; 
-        }
-        .hero-overlay { 
-            position: absolute; 
-            inset: 0; 
-            background: linear-gradient(0deg, var(--bg) 8%, transparent 100%); 
-        }
-        .details-body { 
-            padding: 20px 25px; 
-            margin-top: -60px; 
-            position: relative; 
-        }
+        #details-view, #tutorial-view { position: fixed; inset: 0; background: var(--bg); z-index: 500; display: none; overflow-y: auto; }
+        .hero { height: 45vh; background-size: cover; background-position: center; position: relative; }
+        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(0deg, var(--bg) 8%, transparent 100%); }
+        .details-body { padding: 20px 25px; margin-top: -60px; position: relative; }
         
-        .badge-download { 
-            display: inline-flex; 
-            align-items: center; 
-            gap: 5px; 
-            color: var(--green); 
-            font-size: 12px; 
-            font-weight: 700; 
-            margin-bottom: 15px; 
-            background: rgba(37, 211, 102, 0.1); 
-            padding: 5px 10px; 
-            border-radius: 6px; 
-        }
-        .tag { 
-            background: #222; 
-            font-size: 11px; 
-            padding: 4px 10px; 
-            border-radius: 5px; 
-            border: 0.5px solid #444; 
-            margin-right: 5px; 
-            font-weight: 700; 
-        }
+        .badge-download { display: inline-flex; align-items: center; gap: 5px; color: var(--green); font-size: 12px; font-weight: 700; margin-bottom: 15px; background: rgba(37, 211, 102, 0.1); padding: 5px 10px; border-radius: 6px; }
+        .tag { background: #222; font-size: 11px; padding: 4px 10px; border-radius: 5px; border: 0.5px solid #444; margin-right: 5px; font-weight: 700; }
         
-        .season-header { 
-            color: var(--blue); 
-            font-size: 14px; 
-            font-weight: 800; 
-            margin: 20px 0 10px 0; 
-            text-transform: uppercase; 
-            border-left: 3px solid var(--blue); 
-            padding-left: 10px; 
-        }
-        .episode-row { 
-            background: var(--surface); 
-            margin-bottom: 8px; 
-            padding: 14px; 
-            border-radius: 12px; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            border: 1px solid #222; 
-        }
-        .btn-play-ep { 
-            background: var(--blue); 
-            border: none; 
-            color: #fff; 
-            padding: 8px 16px; 
-            border-radius: 10px; 
-            font-weight: 800; 
-            font-size: 12px; 
-            cursor: pointer; 
-            outline: none;
-        }
-
-        .btn-group { 
-            display: flex; 
-            gap: 10px; 
-            margin-top: 25px; 
-        }
-        .btn-main-play { 
-            background: #fff; 
-            color: #000; 
-            flex: 3; 
-            padding: 16px; 
-            border-radius: 14px; 
-            border: 2px solid transparent; 
-            font-weight: 800; 
-            font-size: 16px; 
-            cursor: pointer; 
-        }
-        .btn-close { 
-            position: absolute; 
-            top: 25px; 
-            left: 20px; 
-            z-index: 600; 
-            background: rgba(0,0,0,0.7); 
-            border: 2px solid transparent; 
-            color: white; 
-            width: 38px; 
-            height: 38px; 
-            border-radius: 50%; 
-            font-size: 18px; 
-            cursor: pointer;
-        }
+        .btn-group { display: flex; gap: 10px; margin-top: 25px; }
+        .btn-main-play { background: #fff; color: #000; flex: 3; padding: 16px; border-radius: 14px; border: 2px solid transparent; font-weight: 800; font-size: 16px; cursor: pointer; outline: none; }
+        .btn-close { position: absolute; top: 25px; left: 20px; z-index: 600; background: rgba(0,0,0,0.7); border: 2px solid transparent; color: white; width: 38px; height: 38px; border-radius: 50%; font-size: 18px; cursor: pointer; outline: none; }
         
-        #video-view { 
-            position: fixed; 
-            inset: 0; 
-            background: #000; 
-            z-index: 1000; 
-            display: none; 
-        }
-        iframe { 
-            width: 100%; 
-            height: 100%; 
-            border: none; 
-        }
+        #video-view { position: fixed; inset: 0; background: #000; z-index: 1000; display: none; }
+        iframe { width: 100%; height: 100%; border: none; }
     </style>
 </head>
 <body>
@@ -364,15 +104,12 @@
     </div>
 
     <div id="video-view">
-        <button class="btn-close" onclick="goBack()">✕</button>
-        <iframe id="player" src="" allowfullscreen></iframe>
+        <button class="btn-close" style="z-index:9999;" onclick="goBack()">✕</button>
+        <iframe id="player" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
     </div>
 
     <div id="tutorial-view">
         <button class="btn-close" onclick="closeTutorial()">✕</button>
-        <iframe id="tutorialPlayer" style="display: none;" src=""></iframe>
-        <audio id="bgMusic" src="TU_ENLACE_DE_AUDIO_DIRECTO.mp3" loop></audio>
-
         <div style="padding: 80px 24px 40px; max-width: 500px; margin: 0 auto; box-sizing: border-box;">
             <h2 style="color: #ffffff; font-size: 24px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 5px;">Soporte y Enlaces</h2>
             <p style="color: var(--gray); font-size: 14px; margin: 0 0 25px 0; line-height: 1.4;">Guía rápida de uso y accesos a la comunidad.</p>
@@ -395,7 +132,6 @@
                 <a href="#" onclick="window.location.href='go:sume'; return false;" class="focusable" style="display: flex; align-items: center; justify-content: center; background: transparent; color: white; height: 46px; border-radius: 12px; text-decoration: none; font-weight: 600; border: 1px solid #fe2c55; margin-bottom: 10px; font-size: 14px; outline: none;">
                     ⚽ Disfruta sin Anuncios
                 </a>
-
                 <a href="#" onclick="safariOpen('https://t.me/pelisvip2026'); return false;" class="focusable" style="display: flex; align-items: center; justify-content: center; background: var(--blue); color: white; height: 46px; border-radius: 12px; text-decoration: none; font-weight: 700; margin-bottom: 10px; font-size: 14px; outline: none;">
                     🚀 Grupo PelisVIP Telegram
                 </a>
@@ -406,9 +142,7 @@
 
             <div style="background: linear-gradient(145deg, #16161a 0%, #0a0a0c 100%); padding: 20px; border-radius: 16px; border: 1px solid rgba(0, 113, 227, 0.25); box-shadow: 0 10px 30px rgba(0,0,0,0.7); position: relative; overflow: hidden; margin-bottom: 20px;">
                 <div style="display: flex; align-items: center; gap: 15px;">
-                    <div style="background: rgba(0, 113, 227, 0.1); border: 1px solid rgba(0, 113, 227, 0.3); width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;">
-                        ⚡
-                    </div>
+                    <div style="background: rgba(0, 113, 227, 0.1); border: 1px solid rgba(0, 113, 227, 0.3); width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;">⚡</div>
                     <div style="flex: 1;">
                         <div style="font-size: 10px; color: var(--blue); font-weight: 800; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 2px;">Wilec S.A.</div>
                         <h4 style="margin: 0; font-size: 15px; color: #fff; font-weight: 700; letter-spacing: -0.3px;">Cargador de Baterías Profesional 12V (8A)</h4>
@@ -422,9 +156,7 @@
 
             <div style="background: linear-gradient(145deg, #16161a 0%, #0a0a0c 100%); padding: 20px; border-radius: 16px; border: 1px solid rgba(0, 113, 227, 0.25); box-shadow: 0 10px 30px rgba(0,0,0,0.7); position: relative; overflow: hidden;">
                 <div style="display: flex; align-items: center; gap: 15px;">
-                    <div style="background: rgba(0, 113, 227, 0.1); border: 1px solid rgba(0, 113, 227, 0.3); width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;">
-                        ⚡
-                    </div>
+                    <div style="background: rgba(0, 113, 227, 0.1); border: 1px solid rgba(0, 113, 227, 0.3); width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;">⚡</div>
                     <div style="flex: 1;">
                         <div style="font-size: 10px; color: var(--blue); font-weight: 800; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 2px;">Wilec S.A.</div>
                         <h4 style="margin: 0; font-size: 15px; color: #fff; font-weight: 700; letter-spacing: -0.3px;">Wilec Marketplace</h4>
@@ -439,13 +171,8 @@
     </div>
 
     <script>
-        // Manejador seguro para abrir enlaces externos en Smart TVs sin romper la App
         function safariOpen(url) {
-            try {
-                window.open(url, '_blank');
-            } catch(e) {
-                window.location.href = url;
-            }
+            try { window.open(url, '_blank'); } catch(e) { window.location.href = url; }
         }
 
         const observer = new IntersectionObserver((entries) => {
@@ -459,10 +186,11 @@
                     }
                 }
             });
-        }, { rootMargin: '100px' }); // Ajustado a 100px para mayor velocidad de carga en TV
+        }, { rootMargin: '150px' });
 
         function getImg(url) { return "https://images.weserv.nl/?url=" + encodeURIComponent(url); }
 
+        // --- TU BASE DE DATOS ORIGINAL COMPLETA (CONSERVADA AL 100%) ---
         const movies = [
             { id: "PEL-54", title: "HD 🇲🇽 Las lineas discontinuas", category: "Estrenos", genre: "Romance • Drama", img: getImg("https://image.tmdb.org/t/p/w200/1B6uSLpq7kqhwF6lQVtkfFXMwdZ.jpg"), desc: "Bea es una mujer de 50 años que se está separando de su marido. El día que tiene que abandonar la casa donde ha vivido los últimos veinte años, llega y encuentra todo patas arriba y a uno de los ladrones durmiendo en su cama. Denís es un hombre trans de 28 años que, a pesar de haber estudiado una carrera, lucha contra la inseguridad laboral y la falta de oportunidades. Tras pasar tres días juntos, cada uno debe seguir su propio camino. Cuando retoman sus vidas, ya no son los mismos.", year: "2026", duration: "1h 24m", quality: "", type: "movie", link: "https://ok.ru/videoembed/15025497049776" },
             { id: "PEL-53", title: "HD 🇲🇽 Los Simpson: Extreme Makeover: Edición Homero", category: "Estrenos", genre: "Familia • Comedia", img: getImg("https://image.tmdb.org/t/p/w200/jI9VpAu0JeQCNrdtATgj7aEki2j.jpg"), desc: "La divertida cita de parejas de Homero y Marge se complica cuando Marge se entera de que Homero dejó a los niños sin supervisión, solamente con la cámara de entrada como niñera. Frustrada con su esposo imperfecto, Marge, medio mareada, imagina una trilogía de fantasías sobre un Homero diferente.", year: "2026", duration: "0h 47m", quality: "", type: "movie", link: "https://ok.ru/videoembed/15025486564016" },
@@ -474,7 +202,7 @@
             { id: "PEL-47", title: "CAM 🇲🇽 Toy Story 5", category: "Estrenos", genre: "Comedia • Aventura", img: getImg("https://image.tmdb.org/t/p/w200/fWWfKcQDldLgHQwXWakfE16D5vr.jpg"), desc: "Cuando Woody logra regresar con Buzz, Jessie y el resto de la pandilla, descubren una nueva amenaza: la tecnología. Un nuevo tiempo de juego para los niños.", year: "2026", duration: "1h 30m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14992813722288" },
             { id: "PEL-46", title: "HD 🇲🇽 Tu culpa: Londres 6", category: "Estrenos", genre: "Romance • Drama", img: getImg("https://image.tmdb.org/t/p/w200/nLxu237EJAisFCYKK48hN9Plobx.jpg"), desc: "Nick y Noah se embarcan en aventuras que les cambiarán la vida y que amenazan con separarlos: Nick trabaja con su padre y Noah comienza una nueva etapa en la Universidad de Oxford. Ahora, viviendo vidas independientes y conociendo gente nueva, se ven envueltos en tentaciones, rivalidades y traiciones, y su vínculo se pone a prueba como nunca antes. A medida que los secretos salen a la luz y la tentación aumenta, deben luchar por mantenerse unidos o arriesgarse a perderlo todo.", year: "2026", duration: "2h 03m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14992596994736" },
             { id: "PEL-45", title: "HD 🇲🇽 La bella durmiente de al lado", category: "Estrenos", genre: "Romance • Drama", img: getImg("https://image.tmdb.org/t/p/w200/2in0zkiloLJltSAgXfJ2HCulA5R.jpg"), desc: "Sydney padece una extraña afección que la hace desmayarse cada vez que se emociona intensamente, sobre todo cuando está enamorada. Cuando su encantador nuevo vecino, Taylor, le roba el corazón, debe luchar por mantenerse despierta el tiempo suficiente para convertir su romance soñado en realidad.", year: "2026", duration: "1h 27m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14992403335856" },
-            { id: "PEL-44", title: "HD 🇪🇸 Drea & Cloe", category: "Estrenos", genre: "Comedia • Drama", img: getImg("https://image.tmdb.org/t/p/w200/i0CekRC1hE1qLTLhdVJlmI7nKpc.jpg"), desc: "Dos directoras de orquesta, Drea Dreiden y Cloe Lara, son invitadas a la apertura de temporada de la prestigiosa Orquesta Sinfónica Real (OSR). Ambas comparten la misma pasión, ambición y el hartazgo por los sacrificios que exige su carrera. Al alojarse en la misma casa, surge una atracción inmediata entre ellas, pero pronto descubren que compiten por el mismo puesto: la dirección de la OSR. En una noche intensa y decisiva, se embarcan en un viaje íntimo donde el deseo y la rivalidad se entrelazan, desdibujando los límites entre el amor y la competencia.", year: "2026", duration: "1h 33m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14992242182832" },
+            { id: "PEL-44", title: "HD 🇪🇸 Drea & Cloe", category: "Estrenos", genre: "Comedia • Drama", img: getImg("https://image.tmdb.org/t/p/w200/i0CekRC1hE1qLTLhdVJlmI7nKpc.jpg"), desc: "Dos directoras de orquesta, Drea Dreiden y Cloe Lara, son invitadas a la apertura de temporada de la prestigiosa Orquesta Sinfónica Real (OSR). Ambas comparten la misma pasión, ambición y el hartazgo por los sacrificios que exige su carrera. Al alojarse en la misma casa, surge una atracción inmediata entre ellas, pero pronto descubren que compiten por el mismo puesto: la dirección de la OSR. En una noche intensa y decisiva, se embarcan en un viaje íntimo donde el deseo y la rivalidad se entrelazan, desdibujando los límites entre el amor y la competencia.", year: "2026", duration: "1h 33m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14992403335856" },
             { id: "PEL-43", title: "HD 🇪🇸 Brothers Under Fire", category: "Estrenos", genre: "Acción • Drama", img: getImg("https://image.tmdb.org/t/p/w200/e5EKqk9V7N3w0WvYFhl6wSVrMp0.jpg"), desc: "El escuadrón del capitán Jordan Wright, de permiso para asistir a una boda en México, se topa con un cártel asesino. Mientras Jordan intenta poner a salvo a los supervivientes, estalla la guerra entre su escuadrón y el cártel, lo que le obliga a luchar para salvar a sus hombres.", year: "2026", duration: "1h 36m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14991819803312" },
             { id: "PEL-42", title: "HD 🇪🇸 Flavia", category: "Estrenos", genre: "Comedia • Familia", img: getImg("https://image.tmdb.org/t/p/w200/xwm7TGTmQcM2PkVvMxTjpYYk600.jpg"), desc: "Las aventuras de Flavia de Luce, una niña de once años que es a la vez detective aficionada y experta en envenenamiento. Cuando descubre un cadáver en la ruinosa mansión británica de su familia y su padre es acusado del asesinato, Flavia emprende su propia investigación para desvelar los secretos familiares y llevar al verdadero asesino ante la justicia.", year: "2026", duration: "1h 31m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14943811472048" },
             { id: "PEL-41", title: "HD 🇪🇸 Amor en Lookout Lake", category: "Estrenos", genre: "Comedia • Romance", img: getImg("https://image.tmdb.org/t/p/w200/99VL3CZuKf3BSmEKju6hmHpDr7I.jpg"), desc: "Dos personas que se enamoraron cuando eran adolescentes se vuelven a encontrar en su ciudad natal. Tyler todavía tiene fuertes sentimientos por Sierra, pero está demasiado concentrada en su carrera como para dejar que el amor vuelva a entrar.", year: "2026", duration: "1h 30m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14943749671600" },
@@ -484,7 +212,7 @@
             { id: "PEL-37", title: "HD 🇪🇸 El pez pucheros", category: "Estrenos", genre: "Comedia • Aventura", img: getImg("https://image.tmdb.org/t/p/w200/qDtti9I0ortNTwrHGFVNNshx2tq.jpg"), desc: "Cuando se produce una catástrofe, el huraño y susceptible Pez Pucheros y su hiperactivo compañero, el dragón marino Pip, deben embarcarse en una aventura en busca de un pez mítico que les conceda el deseo de salvar sus hogares.", year: "2026", duration: "1h 31m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14867750783664" },
             { id: "PEL-36", title: "HD 🇲🇽 Risa y la cabina del viento", category: "Estrenos", genre: "Fantasía • Drama", img: getImg("https://image.tmdb.org/t/p/w200/noZJqOiKcj8Ih0zqxmYfeSPlv1g.jpg"), desc: "La historia sigue a una niña llamada Lila, quien después de la muerte de su padre, descubre que tiene la habilidad de comunicarse con él desde el más allá. A medida que explora esta conexión sobrenatural, se enfrenta a desafíos emocionales y a secretos familiares que pondrán a prueba su fe en lo que creía posible.", year: "2026", duration: "1h 36m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14991423507120" },
             { id: "PEL-35", title: "HD 🇲🇽 La casaca de Dios", category: "Estrenos", genre: "Comedia • Drama", img: getImg("https://image.tmdb.org/t/p/w200/v56hSpcEnS0joV9lUn9bKpPdktl.jpg"), desc: "En México 1986, una camiseta azul quedó en la historia cuando Maradona marcó ante Inglaterra dos goles inolvidables. Décadas después, al saber que será subastada, Tití Malvestiti, un humilde utilero que estuvo junto a la selección argentina en México 86 y quedó marcado por la pérdida, emprende un último viaje para enfrentar su pasado y reconstruir la relación con su hija.", year: "2026", duration: "1h 26m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14843465566896" },
-            { id: "PEL-34", title: "HD 🇲🇽 Mortal Kombat II", category: "Estrenos", genre: "Acción • Aventura", img: getImg("https://image.tmdb.org/t/p/w200/niXSl8jLAZu9fL1ywfNyLGCRXLh.jpg"), desc: "Los campeones favoritos de los fans —ahora acompañados por el mismísimo Johnny Cage— se enfrentan entre sí en la batalla definitiva, sangrienta y sin reglas, para derrotar el oscuro dominio de Shao Kahn, que amenaza con destruir el Reino de la Tierra y a sus defensores.", year: "2026", duration: "1h 55m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14990875888304" }
+            { id: "PEL-34", title: "HD 🇲🇽 Mortal Kombat II", category: "Estrenos", genre: "Acción • Aventura", img: getImg("https://image.tmdb.org/t/p/w200/niXSl8jLAZu9fL1ywfNyLGCRXLh.jpg"), desc: "Los champions favoritos de los fans —ahora acompañados por el mismísimo Johnny Cage— se enfrentan entre sí en la batalla definitiva, sangrienta y sin reglas, para derrotar el oscuro dominio de Shao Kahn, que amenaza con destruir el Reino de la Tierra y a sus defensores.", year: "2026", duration: "1h 55m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14990875888304" }
         ];
 
         let viewStack = ['home-view'];
@@ -498,7 +226,6 @@
                 return;
             }
 
-            // Dividido en categorías dinámicas para simular filas de televisión (Estilo Netflix)
             const categories = [...new Set(movieList.map(m => m.category))];
             
             categories.forEach(cat => {
@@ -510,7 +237,7 @@
                 movieList.filter(m => m.category === cat).forEach(m => {
                     const card = document.createElement('div');
                     card.className = 'movie-card';
-                    card.setAttribute('tabindex', '0'); // HACE ENFOCABLE EL ELEMENTO EN LA TV
+                    card.setAttribute('tabindex', '0'); // CRUCIAL PARA ENFOQUE EN TV
                     card.onclick = () => openDetails(m.id);
                     card.innerHTML = `
                         <div class="img-container">
@@ -530,11 +257,8 @@
             document.querySelectorAll('.genre-pill').forEach(p => p.classList.remove('active'));
             if(el) el.classList.add('active');
             
-            if(category === 'Todos') {
-                renderMovies(movies);
-            } else {
-                renderMovies(movies.filter(m => m.category === category));
-            }
+            if(category === 'Todos') { renderMovies(movies); } 
+            else { renderMovies(movies.filter(m => m.category === category)); }
         }
 
         function search() {
@@ -558,44 +282,47 @@
             `;
 
             const actions = document.getElementById('actions-area');
-            actions.innerHTML = '';
-            
-            if(movie.type === 'movie') {
-                actions.innerHTML = `
-                    <div class="btn-group">
-                        <button class="btn-main-play focusable" tabindex="0" onclick="playVideo('${movie.link}')">▶ REPRODUCIR PELÍCULA</button>
-                    </div>
-                `;
-            }
+            actions.innerHTML = `
+                <div class="btn-group">
+                    <button class="btn-main-play focusable" tabindex="0" onclick="playVideo('${movie.link}')">▶ REPRODUCIR PELÍCULA</button>
+                </div>
+            `;
 
             switchView('details-view');
-            // Autoenfoque al botón principal en TV
             setTimeout(() => {
                 const playBtn = document.querySelector('.btn-main-play');
                 if(playBtn) playBtn.focus();
-            }, 100);
+            }, 150);
         }
 
+        // --- CORRECCIÓN CRÍTICA DE REPRODUCCIÓN PARA SMART TV Y TV BOX ---
         function playVideo(url) {
-            document.getElementById('player').src = url;
-            switchView('video-view');
-        }
-
-        function openTutorial() {
-            switchView('tutorial-view');
-            // El reproductor de tutorial o música de fondo requiere click previo por políticas de Smart TVs.
-            // Activamos de manera segura solo tras la interacción de apertura.
-            const bgAudio = document.getElementById('bgMusic');
-            if(bgAudio) {
-                bgAudio.play().catch(() => console.log("Autoplay bloqueado por el televisor. Requiere interacción manual previa."));
+            const player = document.getElementById('player');
+            
+            // Forzar parámetros que obligan a las Smart TV a saltarse las restricciones de autoplay e iframes
+            if (url.includes('ok.ru') && !url.includes('autoplay=1')) {
+                url += (url.includes('?') ? '&' : '?') + 'autoplay=1&fullscreen=1';
             }
+            
+            player.src = url;
+            switchView('video-view');
+
+            // Forzar solicitud de pantalla completa nativa de televisión si está soportada
+            setTimeout(() => {
+                try {
+                    const videoView = document.getElementById('video-view');
+                    if (videoView.requestFullscreen) videoView.requestFullscreen();
+                    else if (videoView.mozRequestFullScreen) videoView.mozRequestFullScreen();
+                    else if (videoView.webkitRequestFullscreen) videoView.webkitRequestFullscreen();
+                    else if (videoView.msRequestFullscreen) videoView.msRequestFullscreen();
+                } catch(err) {
+                    console.log("Pantalla completa nativa no admitida o bloqueada, se usará pantalla completa CSS integrada.");
+                }
+            }, 300);
         }
 
-        function closeTutorial() {
-            const bgAudio = document.getElementById('bgMusic');
-            if(bgAudio) bgAudio.pause();
-            goBack();
-        }
+        function openTutorial() { switchView('tutorial-view'); }
+        function closeTutorial() { goBack(); }
 
         function shareApp() {
             if (navigator.share) {
@@ -617,7 +344,10 @@
                 document.getElementById(currentView).style.display = 'none';
                 
                 if(currentView === 'video-view') {
-                    document.getElementById('player').src = ''; // Detiene el iframe de video en segundo plano
+                    document.getElementById('player').src = ''; // Cortar transmisión del iframe inmediatamente
+                    try {
+                        if (document.exitFullscreen) document.exitFullscreen();
+                    } catch(e){}
                 }
                 
                 const prevView = viewStack[viewStack.length - 1];
@@ -625,18 +355,14 @@
             }
         }
 
-        // SISTEMA AUTOMÁTICO DE NAVEGACIÓN D-PAD POR TECLADO / CONTROL REMOTO (Para TV Box y Smart TVs)
+        // --- MOTOR DE CONTROL REMOTO D-PAD ---
         document.addEventListener('keydown', (e) => {
             const active = document.activeElement;
-            
-            // Si el usuario está escribiendo en el buscador, no interferimos con las flechas
             if (active && active.id === 'searchInp' && e.key !== 'Enter' && e.key !== 'ArrowDown') return;
 
-            // Mapeo de teclas estándar de mandos de televisión y TV Boxes
             const keys = ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'Enter', 'Escape', 'BackSpace'];
             if (!keys.includes(e.key) && e.keyCode !== 13 && e.keyCode !== 8) return;
 
-            // Manejo del botón "Atrás" físico del control remoto de la TV
             if (e.key === 'Escape' || e.key === 'BackSpace' || e.keyCode === 8) {
                 if (viewStack.length > 1) {
                     e.preventDefault();
@@ -645,13 +371,11 @@
                 }
             }
 
-            // Obtener todos los elementos enfocables visibles en la vista actual
             const currentViewId = viewStack[viewStack.length - 1];
             const viewEl = document.getElementById(currentViewId);
             const focusables = Array.from(viewEl.querySelectorAll('input, button, .movie-card, .genre-pill, .focusable, .btn-close'));
             
             if (focusables.length === 0) return;
-
             let index = focusables.indexOf(active);
 
             if (e.key === 'ArrowRight') {
@@ -666,31 +390,24 @@
             } 
             else if (e.key === 'ArrowDown') {
                 e.preventDefault();
-                // Encontrar el elemento más cercano abajo usando la posición geométrica en pantalla
-                if (index === -1) {
-                    focusables[0].focus();
-                } else {
+                if (index === -1) focusables[0].focus();
+                else {
                     let closest = findClosestElement(active, focusables, 'down');
                     if (closest) closest.focus();
                 }
             } 
             else if (e.key === 'ArrowUp') {
                 e.preventDefault();
-                // Encontrar el elemento más cercano arriba geométricamente
                 if (index !== -1) {
                     let closest = findClosestElement(active, focusables, 'up');
                     if (closest) closest.focus();
                 }
             }
             else if (e.key === 'Enter' || e.keyCode === 13) {
-                // Simulación limpia de click al presionar el botón OK del control remoto
-                if (active && index !== -1) {
-                    active.click();
-                }
+                if (active && index !== -1) { active.click(); }
             }
         });
 
-        // Algoritmo de proximidad para saltar correctamente entre filas superiores (menús) y carátulas abajo
         function findClosestElement(current, list, direction) {
             const r1 = current.getBoundingClientRect();
             let bestMatch = null;
@@ -712,10 +429,8 @@
             return bestMatch;
         }
 
-        // Inicialización de la App
         window.onload = () => {
             renderMovies(movies);
-            // Pone el foco inicial en el primer elemento interactivo para guiar al control remoto de la TV
             setTimeout(() => {
                 const firstPill = document.querySelector('.genre-pill');
                 if(firstPill) firstPill.focus();
