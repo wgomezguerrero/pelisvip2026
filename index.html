@@ -6,64 +6,322 @@
     <title>PelisVIP Premium</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        :root { --bg: #000000; --surface: #121214; --blue: #0071e3; --green: #25D366; --gray: #86868b; }
-        body { background: var(--bg); color: #fff; font-family: 'Plus Jakarta Sans', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
+        :root { 
+            --bg: #000000;
+            --surface: #121214; 
+            --blue: #0071e3; 
+            --green: #25D366; 
+            --gray: #86868b; 
+        }
+        body { 
+            background: var(--bg); 
+            color: #fff; 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            overflow-x: hidden; 
+        }
         
-        header { position: sticky; top: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); z-index: 100; padding: 15px 20px; border-bottom: 0.5px solid #222; }
-        .header-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
-        .logo { font-weight: 800; font-size: 22px; }
-        .logo span { color: var(--blue); }
+        header { 
+            position: sticky; 
+            top: 0; 
+            background: rgba(0,0,0,0.95); 
+            backdrop-filter: blur(20px); 
+            z-index: 100; 
+            padding: 15px 20px; 
+            border-bottom: 0.5px solid #222; 
+        }
+        .header-top { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            margin-bottom: 12px; 
+        }
+        .logo { 
+            font-weight: 800; 
+            font-size: 22px; 
+        }
+        .logo span { 
+            color: var(--blue); 
+        }
         
-        .header-btns { display: flex; gap: 8px; }
-        .btn-icon { background: var(--surface); border: 1px solid #333; color: white; padding: 8px; border-radius: 10px; display: flex; align-items: center; cursor: pointer; }
-        .btn-share-app { background: var(--green); color: white; border: none; padding: 8px 12px; border-radius: 10px; font-size: 11px; font-weight: 800; display: flex; align-items: center; gap: 5px; cursor: pointer; }
+        .header-btns { 
+            display: flex; 
+            gap: 8px; 
+        }
+        .btn-icon { 
+            background: var(--surface); 
+            border: 1px solid #333; 
+            color: white; 
+            padding: 8px; 
+            border-radius: 10px; 
+            display: flex; 
+            align-items: center; 
+            cursor: pointer; 
+            outline: none;
+        }
+        .btn-share-app { 
+            background: var(--green); 
+            color: white; 
+            border: none; 
+            padding: 8px 12px; 
+            border-radius: 10px; 
+            font-size: 11px; 
+            font-weight: 800; 
+            display: flex; 
+            align-items: center; 
+            gap: 5px; 
+            cursor: pointer; 
+            outline: none;
+        }
         
-        .search-box { background: var(--surface); border-radius: 10px; padding: 8px 15px; display: flex; border: 1px solid #222; }
-        .search-box input { background: transparent; border: none; color: white; width: 100%; outline: none; font-size: 15px; }
+        .search-box { 
+            background: var(--surface); 
+            border-radius: 10px; 
+            padding: 8px 15px; 
+            display: flex; 
+            border: 1px solid #222; 
+        }
+        .search-box input { 
+            background: transparent; 
+            border: none; 
+            color: white; 
+            width: 100%; 
+            outline: none; 
+            font-size: 15px; 
+        }
 
-        .genre-container { display: flex; overflow-x: auto; padding: 10px 20px; gap: 10px; position: sticky; top: 115px; background: var(--bg); z-index: 90; scrollbar-width: none; border-bottom: 0.5px solid #111; align-items: center; }
-        .genre-pill { background: var(--surface); padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; white-space: nowrap; border: 1px solid #222; color: var(--gray); cursor: pointer; text-decoration: none; display: inline-block; }
-        .genre-pill.active { background: var(--blue); color: white; border-color: var(--blue); }
-        .btn-tv-special { background: linear-gradient(45deg, #ff0000, #b30000); color: white; border: none; }
+        .genre-container { 
+            display: flex; 
+            overflow-x: auto; 
+            padding: 10px 20px; 
+            gap: 10px; 
+            position: sticky; 
+            top: 115px; 
+            background: var(--bg); 
+            z-index: 90; 
+            scrollbar-width: none; 
+            border-bottom: 0.5px solid #111; 
+            align-items: center; 
+        }
+        .genre-pill { 
+            background: var(--surface); 
+            padding: 8px 16px; 
+            border-radius: 20px; 
+            font-size: 12px; 
+            font-weight: 600; 
+            white-space: nowrap; 
+            border: 1px solid #222; 
+            color: var(--gray); 
+            cursor: pointer; 
+            text-decoration: none; 
+            display: inline-block; 
+            outline: none;
+        }
+        .genre-pill.active { 
+            background: var(--blue); 
+            color: white; 
+            border-color: var(--blue); 
+        }
+        .btn-tv-special { 
+            background: linear-gradient(45deg, #ff0000, #b30000); 
+            color: white; 
+            border: none; 
+        }
 
-        .section-title { padding: 20px 20px 10px; font-size: 18px; font-weight: 800; letter-spacing: -0.5px; }
-        .carousel { display: flex; overflow-x: auto; padding: 0 20px 25px; gap: 15px; scrollbar-width: none; }
-        .grid-view { display: grid; grid-template-columns: repeat(auto-fill, minmax(105px, 1fr)); gap: 15px; padding: 20px; }
+        .section-title { 
+            padding: 20px 20px 10px; 
+            font-size: 18px; 
+            font-weight: 800; 
+            letter-spacing: -0.5px; 
+        }
+        .carousel { 
+            display: flex; 
+            overflow-x: auto; 
+            padding: 0 20px 25px; 
+            gap: 15px; 
+            scrollbar-width: none; 
+        }
+        .grid-view { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(105px, 1fr)); 
+            gap: 15px; 
+            padding: 20px; 
+        }
         
-        .movie-card { width: 110px; flex-shrink: 0; cursor: pointer; }
-        .img-container { width: 100%; aspect-ratio: 2/3; border-radius: 12px; background: #1c1c1e; overflow: hidden; border: 0.5px solid #333; position: relative; }
-        .img-container img { width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.4s ease-in; }
-        .img-container img.loaded { opacity: 1; }
-        .movie-card span { display: block; font-size: 11px; margin-top: 8px; text-align: center; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; font-weight: 600; }
+        .movie-card { 
+            width: 110px; 
+            flex-shrink: 0; 
+            cursor: pointer; 
+            outline: none;
+            border: 2px solid transparent;
+            border-radius: 14px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .img-container { 
+            width: 100%; 
+            aspect-ratio: 2/3; 
+            border-radius: 12px; 
+            background: #1c1c1e; 
+            overflow: hidden; 
+            border: 0.5px solid #333; 
+            position: relative; 
+        }
+        .img-container img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            opacity: 0; 
+            transition: opacity 0.4s ease-in; 
+        }
+        .img-container img.loaded { 
+            opacity: 1; 
+        }
+        .movie-card span { 
+            display: block; 
+            font-size: 11px; 
+            margin-top: 8px; 
+            text-align: center; 
+            text-overflow: ellipsis; 
+            white-space: nowrap; 
+            overflow: hidden; 
+            font-weight: 600; 
+        }
 
-        #details-view, #tutorial-view { position: fixed; inset: 0; background: var(--bg); z-index: 500; display: none; overflow-y: auto; }
-        .hero { height: 45vh; background-size: cover; background-position: center; position: relative; }
-        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(0deg, var(--bg) 8%, transparent 100%); }
-        .details-body { padding: 20px 25px; margin-top: -60px; position: relative; }
-        
-        .badge-download { display: inline-flex; align-items: center; gap: 5px; color: var(--green); font-size: 12px; font-weight: 700; margin-bottom: 15px; background: rgba(37, 211, 102, 0.1); padding: 5px 10px; border-radius: 6px; }
-        .tag { background: #222; font-size: 11px; padding: 4px 10px; border-radius: 5px; border: 0.5px solid #444; margin-right: 5px; font-weight: 700; }
-        
-        .season-header { color: var(--blue); font-size: 14px; font-weight: 800; margin: 20px 0 10px 0; text-transform: uppercase; border-left: 3px solid var(--blue); padding-left: 10px; }
-        .episode-row { background: var(--surface); margin-bottom: 8px; padding: 14px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #222; }
-        .btn-play-ep { background: var(--blue); border: none; color: #fff; padding: 8px 16px; border-radius: 10px; font-weight: 800; font-size: 12px; cursor: pointer; }
+        /* EFECTO DE ENFOQUE PARA MANDOS DE TV */
+        .movie-card:focus, .btn-icon:focus, .btn-share-app:focus, .genre-pill:focus, .focusable:focus, .btn-main-play:focus, .btn-close:focus {
+            border-color: var(--blue) !important;
+            box-shadow: 0 0 15px var(--blue) !important;
+            transform: scale(1.05);
+            outline: none;
+        }
 
-        .btn-group { display: flex; gap: 10px; margin-top: 25px; }
-        .btn-main-play { background: #fff; color: #000; flex: 3; padding: 16px; border-radius: 14px; border: none; font-weight: 800; font-size: 16px; cursor: pointer; }
-        .btn-close { position: absolute; top: 25px; left: 20px; z-index: 600; background: rgba(0,0,0,0.7); border: none; color: white; width: 38px; height: 38px; border-radius: 50%; font-size: 18px; }
+        #details-view, #tutorial-view { 
+            position: fixed; 
+            inset: 0; 
+            background: var(--bg); 
+            z-index: 500; 
+            display: none; 
+            overflow-y: auto; 
+        }
+        .hero { 
+            height: 45vh; 
+            background-size: cover; 
+            background-position: center; 
+            position: relative; 
+        }
+        .hero-overlay { 
+            position: absolute; 
+            inset: 0; 
+            background: linear-gradient(0deg, var(--bg) 8%, transparent 100%); 
+        }
+        .details-body { 
+            padding: 20px 25px; 
+            margin-top: -60px; 
+            position: relative; 
+        }
         
-        #video-view { position: fixed; inset: 0; background: #000; z-index: 1000; display: none; }
-        iframe { width: 100%; height: 100%; border: none; }
+        .badge-download { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 5px; 
+            color: var(--green); 
+            font-size: 12px; 
+            font-weight: 700; 
+            margin-bottom: 15px; 
+            background: rgba(37, 211, 102, 0.1); 
+            padding: 5px 10px; 
+            border-radius: 6px; 
+        }
+        .tag { 
+            background: #222; 
+            font-size: 11px; 
+            padding: 4px 10px; 
+            border-radius: 5px; 
+            border: 0.5px solid #444; 
+            margin-right: 5px; 
+            font-weight: 700; 
+        }
+        
+        .season-header { 
+            color: var(--blue); 
+            font-size: 14px; 
+            font-weight: 800; 
+            margin: 20px 0 10px 0; 
+            text-transform: uppercase; 
+            border-left: 3px solid var(--blue); 
+            padding-left: 10px; 
+        }
+        .episode-row { 
+            background: var(--surface); 
+            margin-bottom: 8px; 
+            padding: 14px; 
+            border-radius: 12px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border: 1px solid #222; 
+        }
+        .btn-play-ep { 
+            background: var(--blue); 
+            border: none; 
+            color: #fff; 
+            padding: 8px 16px; 
+            border-radius: 10px; 
+            font-weight: 800; 
+            font-size: 12px; 
+            cursor: pointer; 
+            outline: none;
+        }
+
+        .btn-group { 
+            display: flex; 
+            gap: 10px; 
+            margin-top: 25px; 
+        }
+        .btn-main-play { 
+            background: #fff; 
+            color: #000; 
+            flex: 3; 
+            padding: 16px; 
+            border-radius: 14px; 
+            border: 2px solid transparent; 
+            font-weight: 800; 
+            font-size: 16px; 
+            cursor: pointer; 
+        }
+        .btn-close { 
+            position: absolute; 
+            top: 25px; 
+            left: 20px; 
+            z-index: 600; 
+            background: rgba(0,0,0,0.7); 
+            border: 2px solid transparent; 
+            color: white; 
+            width: 38px; 
+            height: 38px; 
+            border-radius: 50%; 
+            font-size: 18px; 
+            cursor: pointer;
+        }
+        
+        #video-view { 
+            position: fixed; 
+            inset: 0; 
+            background: #000; 
+            z-index: 1000; 
+            display: none; 
+        }
+        iframe { 
+            width: 100%; 
+            height: 100%; 
+            border: none; 
+        }
     </style>
 </head>
 <body>
 
-
-
-
-
-
-<div id="home-view">
+    <div id="home-view">
         <header>
             <div class="header-top">
                 <div class="logo">PELIS<span>VIP</span></div>
@@ -76,19 +334,20 @@
                     </button>
                 </div>
             </div>
-            <div class="search-box"><input type="text" id="searchInp" placeholder="Buscar en PelisVIP..." onkeyup="search()">
-      </div>
-    </header>
+            <div class="search-box">
+                <input type="text" id="searchInp" placeholder="Buscar en PelisVIP..." onkeyup="search()">
+            </div>
+        </header>
         
         <div class="genre-container">
-            <a href="go:tv" class="genre-pill btn-tv-special">📺 TV</a>
-            <div class="genre-pill active" onclick="filter('Todos', this)">🏠 Inicio</div>
-            <div class="genre-pill" onclick="filter('Estrenos', this)">🔥 Estrenos</div>
-            <div class="genre-pill" onclick="filter('Series', this)">📺 Series</div>
-            <div class="genre-pill" onclick="filter('Doramas', this)">🌸 Doramas</div>
-            <div class="genre-pill" onclick="filter('Documentales', this)">🌍 Documentales</div>
-            
+            <a href="#" onclick="window.location.href='go:tv'; return false;" class="genre-pill btn-tv-special">📺 TV</a>
+            <div class="genre-pill active" tabindex="0" onclick="filter('Todos', this)">🏠 Inicio</div>
+            <div class="genre-pill" tabindex="0" onclick="filter('Estrenos', this)">🔥 Estrenos</div>
+            <div class="genre-pill" tabindex="0" onclick="filter('Series', this)">📺 Series</div>
+            <div class="genre-pill" tabindex="0" onclick="filter('Doramas', this)">🌸 Doramas</div>
+            <div class="genre-pill" tabindex="0" onclick="filter('Documentales', this)">🌍 Documentales</div>
         </div>
+        
         <div id="main-content"></div>
     </div>
 
@@ -133,22 +392,19 @@
                 <h3 style="margin: 0 0 6px 0; font-size: 15px; color: #fff; font-weight: 700;">💬 Canales Oficiales</h3>
                 <p style="color: var(--gray); font-size: 13px; line-height: 1.4; margin: 0 0 15px 0;">Escríbenos directamente o únete a nuestros grupos de asistencia.</p>
 
-                <a href="go:sume" style="display: flex; align-items: center; justify-content: center; background: transparent; color: white; height: 46px; border-radius: 12px; text-decoration: none; font-weight: 600; border: 1px solid #fe2c55; margin-bottom: 10px; font-size: 14px;">
-    ⚽ Disfruta sin Anuncios
-</a>
+                <a href="#" onclick="window.location.href='go:sume'; return false;" class="focusable" style="display: flex; align-items: center; justify-content: center; background: transparent; color: white; height: 46px; border-radius: 12px; text-decoration: none; font-weight: 600; border: 1px solid #fe2c55; margin-bottom: 10px; font-size: 14px; outline: none;">
+                    ⚽ Disfruta sin Anuncios
+                </a>
 
-                <a href="#" onclick="window.open('https://t.me/pelisvip2026', '_system'); return false;" style="display: flex; align-items: center; justify-content: center; background: var(--blue); color: white; height: 46px; border-radius: 12px; text-decoration: none; font-weight: 700; margin-bottom: 10px; font-size: 14px;">
-    🚀 Grupo PelisVIP Telegram
-</a>
-                <a href="#" onclick="window.open('https://www.tiktok.com/@pelisvip2026', '_system'); return false;" style="display: flex; align-items: center; justify-content: center; background: transparent; color: white; height: 46px; border-radius: 12px; text-decoration: none; font-weight: 600; border: 1px solid #fe2c55; margin-bottom: 10px; font-size: 14px;">
-    📱 Síguenos en TikTok y Comparte
-</a>
-
-
-
+                <a href="#" onclick="safariOpen('https://t.me/pelisvip2026'); return false;" class="focusable" style="display: flex; align-items: center; justify-content: center; background: var(--blue); color: white; height: 46px; border-radius: 12px; text-decoration: none; font-weight: 700; margin-bottom: 10px; font-size: 14px; outline: none;">
+                    🚀 Grupo PelisVIP Telegram
+                </a>
+                <a href="#" onclick="safariOpen('https://www.tiktok.com/@pelisvip2026'); return false;" class="focusable" style="display: flex; align-items: center; justify-content: center; background: transparent; color: white; height: 46px; border-radius: 12px; text-decoration: none; font-weight: 600; border: 1px solid #fe2c55; margin-bottom: 10px; font-size: 14px; outline: none;">
+                    📱 Síguenos en TikTok y Comparte
+                </a>
             </div>
 
-            <div style="background: linear-gradient(145deg, #16161a 0%, #0a0a0c 100%); padding: 20px; border-radius: 16px; border: 1px solid rgba(0, 113, 227, 0.25); box-shadow: 0 10px 30px rgba(0,0,0,0.7); position: relative; overflow: hidden;">
+            <div style="background: linear-gradient(145deg, #16161a 0%, #0a0a0c 100%); padding: 20px; border-radius: 16px; border: 1px solid rgba(0, 113, 227, 0.25); box-shadow: 0 10px 30px rgba(0,0,0,0.7); position: relative; overflow: hidden; margin-bottom: 20px;">
                 <div style="display: flex; align-items: center; gap: 15px;">
                     <div style="background: rgba(0, 113, 227, 0.1); border: 1px solid rgba(0, 113, 227, 0.3); width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;">
                         ⚡
@@ -159,13 +415,10 @@
                         <p style="margin: 4px 0 0 0; color: #a1a1a6; font-size: 12px; line-height: 1.3;">Alta eficiencia para vehículos y motocicletas. Diseño robusto y seguro. Garantia de 1 Año</p>
                     </div>
                 </div>
-                <a href="https://wa.me/593962238554?text=Hola%20Wilec,%20me%20interesa%20adquirir%20el%20Cargador%20de%20Baterías%20de%2012V" target="_blank" style="display: flex; align-items: center; justify-content: center; background: var(--green); color: white; height: 44px; border-radius: 12px; text-decoration: none; font-weight: 700; margin-top: 18px; font-size: 13px; letter-spacing: 0.3px;">
+                <a href="https://wa.me/593962238554?text=Hola%20Wilec,%20me%20interesa%20adquirir%20el%20Cargador%20de%20Baterías%20de%2012V" target="_blank" class="focusable" style="display: flex; align-items: center; justify-content: center; background: var(--green); color: white; height: 44px; border-radius: 12px; text-decoration: none; font-weight: 700; margin-top: 18px; font-size: 13px; letter-spacing: 0.3px; outline: none;">
                     MÁS INFORMACIÓN Y COMPRA
                 </a>
             </div>
-
-
-
 
             <div style="background: linear-gradient(145deg, #16161a 0%, #0a0a0c 100%); padding: 20px; border-radius: 16px; border: 1px solid rgba(0, 113, 227, 0.25); box-shadow: 0 10px 30px rgba(0,0,0,0.7); position: relative; overflow: hidden;">
                 <div style="display: flex; align-items: center; gap: 15px;">
@@ -178,28 +431,25 @@
                         <p style="margin: 4px 0 0 0; color: #a1a1a6; font-size: 12px; line-height: 1.3;">Descarga Wilec Marketplace para comprar o vender artículos solo para Ecuador.</p>
                     </div>
                 </div>
-                <a href="https://www.appcreator24.com/app3618851-8akgvw" target="_blank" style="display: flex; align-items: center; justify-content: center; background: var(--green); color: white; height: 44px; border-radius: 12px; text-decoration: none; font-weight: 700; margin-top: 18px; font-size: 13px; letter-spacing: 0.3px;">
+                <a href="https://www.appcreator24.com/app3618851-8akgvw" target="_blank" class="focusable" style="display: flex; align-items: center; justify-content: center; background: var(--green); color: white; height: 44px; border-radius: 12px; text-decoration: none; font-weight: 700; margin-top: 18px; font-size: 13px; letter-spacing: 0.3px; outline: none;">
                     Descargar Wilec Marketplace
                 </a>
             </div>
-
-
-
-
-
         </div>
     </div>
 
-
-
-
-
-
-
-
     <script>
+        // Manejador seguro para abrir enlaces externos en Smart TVs sin romper la App
+        function safariOpen(url) {
+            try {
+                window.open(url, '_blank');
+            } catch(e) {
+                window.location.href = url;
+            }
+        }
+
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
+            entries.forEach(entry => { 
                 if (entry.isIntersecting) {
                     const img = entry.target;
                     if(img.dataset.src) {
@@ -209,937 +459,268 @@
                     }
                 }
             });
-        }, { rootMargin: '50px' });
+        }, { rootMargin: '100px' }); // Ajustado a 100px para mayor velocidad de carga en TV
 
         function getImg(url) { return "https://images.weserv.nl/?url=" + encodeURIComponent(url); }
 
         const movies = [
-
-
-
-
-
-
             { id: "PEL-54", title: "HD 🇲🇽 Las lineas discontinuas", category: "Estrenos", genre: "Romance • Drama", img: getImg("https://image.tmdb.org/t/p/w200/1B6uSLpq7kqhwF6lQVtkfFXMwdZ.jpg"), desc: "Bea es una mujer de 50 años que se está separando de su marido. El día que tiene que abandonar la casa donde ha vivido los últimos veinte años, llega y encuentra todo patas arriba y a uno de los ladrones durmiendo en su cama. Denís es un hombre trans de 28 años que, a pesar de haber estudiado una carrera, lucha contra la inseguridad laboral y la falta de oportunidades. Tras pasar tres días juntos, cada uno debe seguir su propio camino. Cuando retoman sus vidas, ya no son los mismos.", year: "2026", duration: "1h 24m", quality: "", type: "movie", link: "https://ok.ru/videoembed/15025497049776" },
-
             { id: "PEL-53", title: "HD 🇲🇽 Los Simpson: Extreme Makeover: Edición Homero", category: "Estrenos", genre: "Familia • Comedia", img: getImg("https://image.tmdb.org/t/p/w200/jI9VpAu0JeQCNrdtATgj7aEki2j.jpg"), desc: "La divertida cita de parejas de Homero y Marge se complica cuando Marge se entera de que Homero dejó a los niños sin supervisión, solamente con la cámara de entrada como niñera. Frustrada con su esposo imperfecto, Marge, medio mareada, imagina una trilogía de fantasías sobre un Homero diferente.", year: "2026", duration: "0h 47m", quality: "", type: "movie", link: "https://ok.ru/videoembed/15025486564016" },
-
-            { id: "PEL-52", title: "HD 🇲🇽 Mensajes de voz para Isabelle", category: "Estrenos", genre: "Romance • Comedia", img: getImg("https://image.tmdb.org/t/p/w200/3nY9BG8VjuxwLLRx5BGiiuj0M71.jpg"), desc: "Los entretenidos mensajes de voz que una joven mujer le deja a su hermana fallecida le llegan por azar a un desconocido, quien se enamora de ella sin siquiera verla.", year: "2026", duration: "1h 58m", quality: "", type: "movie", link: "https://ok.ru/videoembed/15025460415152" },
-
+            { id: "PEL-52", title: "HD 🇲🇽 Mensajes de voz para Isabelle", category: "Estrenos", genre: "Romance • Comedia", img: getImg("https://image.tmdb.org/t/p/w200/3nY9BG8VjuxwLLRx5BGiiuj0M71.jpg"), desc: "Los entretenidos mensajes de voz que una young mujer le deja a su hermana fallecida le llegan por azar a un desconocido, quien se enamora de ella sin siquiera verla.", year: "2026", duration: "1h 58m", quality: "", type: "movie", link: "https://ok.ru/videoembed/15025460415152" },
             { id: "PEL-51", title: "HD 🇲🇽 Maridos en acción", category: "Estrenos", genre: "Acción • Comedia", img: getImg("https://image.tmdb.org/t/p/w200/A01Ca3GfoUZ192ebgHHj6MYOG35.jpg"), desc: "Un detective se une al nuevo esposo de su ex para encontrar a quienes la secuestraron. ¿Este singular dúo podrá superar sus diferencias para lograr un rescate increíble?", year: "2026", duration: "1h 49m", quality: "", type: "movie", link: "https://ok.ru/videoembed/15025445997232" },
-
             { id: "PEL-50", title: "HD 🇪🇸 Balandrau", category: "Estrenos", genre: "Drama • Aventura", img: getImg("https://image.tmdb.org/t/p/w200/iwcsgsolhDb4ws9SEkXioxo2xlr.jpg"), desc: "El 30 de diciembre de 2000, un grupo de amigos escaló el Balandrau, pero una impredecible ventisca desató la peor tormenta de los Pirineos de la historia.", year: "2026", duration: "1h 56m", quality: "", type: "movie", link: "https://ok.ru/videoembed/15025434593968" },
-         
             { id: "PEL-49", title: "HD 🇪🇸 Criaturas luminosas", category: "Estrenos", genre: "Drama • Misterio", img: getImg("https://image.tmdb.org/t/p/w200/8I2O28Y0avRiKDfdzdkAKbSLxft.jpg"), desc: "Mientras trabaja por las noches en un pequeño acuario, una viuda forja un vínculo con un pulpo inteligente y un joven sin rumbo en este emotivo drama basado en la exitosa novela.", year: "2026", duration: "1h 54m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14995547622064" },
-
             { id: "PEL-48", title: "HD 🇪🇸 La ironía del Amor", category: "Estrenos", genre: "Romance • Música", img: getImg("https://image.tmdb.org/t/p/w200/uvfBXtJ1EB3asfpJcQCN9g9Eijf.jpg"), desc: "Grace Pine, una crítica musical de 24 años, se muda a Montreal para escribir un libro sobre Jagged Little Pill de Alanis Morissette, pero sus planes se complican cuando se involucra sentimentalmente con dos miembros de una banda indie a la que está reseñando y decide convertirse en su publicista.", year: "2026", duration: "1h 47m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14993607887536" },
-
             { id: "PEL-47", title: "CAM 🇲🇽 Toy Story 5", category: "Estrenos", genre: "Comedia • Aventura", img: getImg("https://image.tmdb.org/t/p/w200/fWWfKcQDldLgHQwXWakfE16D5vr.jpg"), desc: "Cuando Woody logra regresar con Buzz, Jessie y el resto de la pandilla, descubren una nueva amenaza: la tecnología. Un nuevo tiempo de juego para los niños.", year: "2026", duration: "1h 30m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14992813722288" },
-
             { id: "PEL-46", title: "HD 🇲🇽 Tu culpa: Londres 6", category: "Estrenos", genre: "Romance • Drama", img: getImg("https://image.tmdb.org/t/p/w200/nLxu237EJAisFCYKK48hN9Plobx.jpg"), desc: "Nick y Noah se embarcan en aventuras que les cambiarán la vida y que amenazan con separarlos: Nick trabaja con su padre y Noah comienza una nueva etapa en la Universidad de Oxford. Ahora, viviendo vidas independientes y conociendo gente nueva, se ven envueltos en tentaciones, rivalidades y traiciones, y su vínculo se pone a prueba como nunca antes. A medida que los secretos salen a la luz y la tentación aumenta, deben luchar por mantenerse unidos o arriesgarse a perderlo todo.", year: "2026", duration: "2h 03m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14992596994736" },
-
             { id: "PEL-45", title: "HD 🇲🇽 La bella durmiente de al lado", category: "Estrenos", genre: "Romance • Drama", img: getImg("https://image.tmdb.org/t/p/w200/2in0zkiloLJltSAgXfJ2HCulA5R.jpg"), desc: "Sydney padece una extraña afección que la hace desmayarse cada vez que se emociona intensamente, sobre todo cuando está enamorada. Cuando su encantador nuevo vecino, Taylor, le roba el corazón, debe luchar por mantenerse despierta el tiempo suficiente para convertir su romance soñado en realidad.", year: "2026", duration: "1h 27m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14992403335856" },
-
             { id: "PEL-44", title: "HD 🇪🇸 Drea & Cloe", category: "Estrenos", genre: "Comedia • Drama", img: getImg("https://image.tmdb.org/t/p/w200/i0CekRC1hE1qLTLhdVJlmI7nKpc.jpg"), desc: "Dos directoras de orquesta, Drea Dreiden y Cloe Lara, son invitadas a la apertura de temporada de la prestigiosa Orquesta Sinfónica Real (OSR). Ambas comparten la misma pasión, ambición y el hartazgo por los sacrificios que exige su carrera. Al alojarse en la misma casa, surge una atracción inmediata entre ellas, pero pronto descubren que compiten por el mismo puesto: la dirección de la OSR. En una noche intensa y decisiva, se embarcan en un viaje íntimo donde el deseo y la rivalidad se entrelazan, desdibujando los límites entre el amor y la competencia.", year: "2026", duration: "1h 33m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14992242182832" },
-
             { id: "PEL-43", title: "HD 🇪🇸 Brothers Under Fire", category: "Estrenos", genre: "Acción • Drama", img: getImg("https://image.tmdb.org/t/p/w200/e5EKqk9V7N3w0WvYFhl6wSVrMp0.jpg"), desc: "El escuadrón del capitán Jordan Wright, de permiso para asistir a una boda en México, se topa con un cártel asesino. Mientras Jordan intenta poner a salvo a los supervivientes, estalla la guerra entre su escuadrón y el cártel, lo que le obliga a luchar para salvar a sus hombres.", year: "2026", duration: "1h 36m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14991819803312" },
-
             { id: "PEL-42", title: "HD 🇪🇸 Flavia", category: "Estrenos", genre: "Comedia • Familia", img: getImg("https://image.tmdb.org/t/p/w200/xwm7TGTmQcM2PkVvMxTjpYYk600.jpg"), desc: "Las aventuras de Flavia de Luce, una niña de once años que es a la vez detective aficionada y experta en envenenamiento. Cuando descubre un cadáver en la ruinosa mansión británica de su familia y su padre es acusado del asesinato, Flavia emprende su propia investigación para desvelar los secretos familiares y llevar al verdadero asesino ante la justicia.", year: "2026", duration: "1h 31m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14943811472048" },
-
             { id: "PEL-41", title: "HD 🇪🇸 Amor en Lookout Lake", category: "Estrenos", genre: "Comedia • Romance", img: getImg("https://image.tmdb.org/t/p/w200/99VL3CZuKf3BSmEKju6hmHpDr7I.jpg"), desc: "Dos personas que se enamoraron cuando eran adolescentes se vuelven a encontrar en su ciudad natal. Tyler todavía tiene fuertes sentimientos por Sierra, pero está demasiado concentrada en su carrera como para dejar que el amor vuelva a entrar.", year: "2026", duration: "1h 30m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14943749671600" },
-
             { id: "PEL-40", title: "HD 🇪🇸 La boda maldita", category: "Estrenos", genre: "Comedia • Terror", img: getImg("https://image.tmdb.org/t/p/w200/n8DHPlRSHmaNUMtT95mDJwH6IX8.jpg"), desc: "Un hombre que hereda un palacio decide usarlo para celebrar la boda de su hermana, pero el siniestro pasado del lugar amenaza con arruinar la celebración.", year: "2026", duration: "2h 43m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14943606213296" },
-
             { id: "PEL-39", title: "HD 🇲🇽 Llueve sobre Babel", category: "Estrenos", genre: "Comedia • Drama", img: getImg("https://image.tmdb.org/t/p/w200/o6IDuFe3bBUR46DQbTy4tRCvnuk.jpg"), desc: "Un grupo de inadaptados se reúne en Babel, un legendario bar de mala muerte que hace las veces de purgatorio, donde preside La Flaca, la Parca de la ciudad. Aquí, las almas se juegan años de sus vidas con ella, atreviéndose a burlar a la mismísima Muerte.", year: "2026", duration: "1h 53m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14930932206256" },
-
             { id: "PEL-38", title: "HD 🇪🇸 Doblemente feliz", category: "Estrenos", genre: "Romance • Drama", img: getImg("https://image.tmdb.org/t/p/w200/1MzikEP1A09dZFuQu5DBxJFPNH7.jpg"), desc: "El novio Tim debe organizar al mismo tiempo dos bodas perfectas en el mismo hotel de cinco estrellas para sus padres divorciados y distanciados, sin ser descubierto.", year: "2026", duration: "2h 09m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14935457729200" },
-
             { id: "PEL-37", title: "HD 🇪🇸 El pez pucheros", category: "Estrenos", genre: "Comedia • Aventura", img: getImg("https://image.tmdb.org/t/p/w200/qDtti9I0ortNTwrHGFVNNshx2tq.jpg"), desc: "Cuando se produce una catástrofe, el huraño y susceptible Pez Pucheros y su hiperactivo compañero, el dragón marino Pip, deben embarcarse en una aventura en busca de un pez mítico que les conceda el deseo de salvar sus hogares.", year: "2026", duration: "1h 31m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14867750783664" },
-
             { id: "PEL-36", title: "HD 🇲🇽 Risa y la cabina del viento", category: "Estrenos", genre: "Fantasía • Drama", img: getImg("https://image.tmdb.org/t/p/w200/noZJqOiKcj8Ih0zqxmYfeSPlv1g.jpg"), desc: "La historia sigue a una niña llamada Lila, quien después de la muerte de su padre, descubre que tiene la habilidad de comunicarse con él desde el más allá. A medida que explora esta conexión sobrenatural, se enfrenta a desafíos emocionales y a secretos familiares que pondrán a prueba su fe en lo que creía posible.", year: "2026", duration: "1h 36m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14991423507120" },
-
             { id: "PEL-35", title: "HD 🇲🇽 La casaca de Dios", category: "Estrenos", genre: "Comedia • Drama", img: getImg("https://image.tmdb.org/t/p/w200/v56hSpcEnS0joV9lUn9bKpPdktl.jpg"), desc: "En México 1986, una camiseta azul quedó en la historia cuando Maradona marcó ante Inglaterra dos goles inolvidables. Décadas después, al saber que será subastada, Tití Malvestiti, un humilde utilero que estuvo junto a la selección argentina en México 86 y quedó marcado por la pérdida, emprende un último viaje para enfrentar su pasado y reconstruir la relación con su hija.", year: "2026", duration: "1h 26m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14843465566896" },
-
-            { id: "PEL-34", title: "HD 🇲🇽 Mortal Kombat II", category: "Estrenos", genre: "Acción • Aventura", img: getImg("https://image.tmdb.org/t/p/w200/niXSl8jLAZu9fL1ywfNyLGCRXLh.jpg"), desc: "Los campeones favoritos de los fans —ahora acompañados por el mismísimo Johnny Cage— se enfrentan entre sí en la batalla definitiva, sangrienta y sin reglas, para derrotar el oscuro dominio de Shao Kahn, que amenaza con destruir el Reino de la Tierra y a sus defensores.", year: "2026", duration: "1h 55m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14990875888304" },
-
-            { id: "PEL-33", title: "HD 🇲🇽 En la ruta del Crimen", category: "Estrenos", genre: "Acción • Suspenso", img: getImg("https://image.tmdb.org/t/p/w200/78B66xBCgmnh88d10B85uFjC88V.jpg"), desc: "Tras un enfrentamiento mortal, el agente de la ley Frank Bennett descubre una enorme red de contrabando. Sin servicio de telefonía móvil y sin su camión, Frank se ve obligado a enfrentarse a una peligrosa banda liderada por un ex comandante militar trastornado. Detenerlos antes de que lleguen a la frontera no es sólo su deber, es su única oportunidad de sobrevivir.", year: "2026", duration: "1h 27m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14807623994032" },
-
-            { id: "PEL-32", title: "CAM 🇲🇽 Amos del Universo He-Man", category: "Estrenos", genre: "Acción • Fantasía", img: getImg("https://image.tmdb.org/t/p/w200/hNLKuennkGtlWvqU6Ko4Z6X8JHg.jpg"), desc: "En las regiones más lejanas del espacio, el reino de Eternia está amenazado por el villano Skeletor y sus traviesos ejércitos de oscuridad. Para salvar el reino de su padre y proteger las vidas de sus seres queridos, el joven príncipe Adam tiene que recuperar una espada mítica y convertirse en el legendario guerrero conocido como He-Man.", year: "2026", duration: "2h 13m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14807467362992" },
-
-            { id: "PEL-31", title: "HD 🇲🇽 México 86", category: "Estrenos", genre: "Comedia • Drama", img: getImg("https://image.tmdb.org/t/p/w200/ie0evW3npWrB25prNSKOdlEamSd.jpg"), desc: "Atrevimiento, locura y puro ingenio mexicano. En 1986, México fue sede del campeonato de fútbol más importante del mundo contra todo pronóstico. ¿Cómo se logró esa hazaña?", year: "2026", duration: "1h 37m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14797298338480" },
-
-            { id: "PEL-30", title: "HD 🇲🇽 Scary Movie: Terroríficamente incorrecta", category: "Estrenos", genre: "Comedia • Terror", img: getImg("https://pics.filmaffinity.com/scary_movie-679505054-large.jpg"), desc: "Veintiséis años después de su primer encuentro con un asesino enmascarado, los miembros que quedan del grupo de entonces —Shorty Meeks (Marlon Wayans), Ray Wilkins (Shawn Wayans), Cindy Campbell (Anna Faris) y Brenda Meeks (Regina Hall)— vuelven a encontrarse en peligro de muerte. El asesino, también conocido como Ghostface, parece haberlos vuelto a poner en su punto de mira y retoma los acontecimientos de aquel entonces.", year: "2026", duration: "1h 20m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14807285631664" },
-
-            { id: "PEL-29", title: "Marty Supremo", category: "Estrenos", genre: "Drama • Misterio", img: getImg("https://image.tmdb.org/t/p/original/jctiZ1I2p4b6mceR85QxYhgs4Ft.jpg"), desc: "Muestra el viaje de Marty Reisman, un buscavidas convertido en campeón de ping-pong que se convirtió en el más veterano en ganar una competición nacional, con 67 años.", year: "2026", duration: "2h 24m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14719105567408" },
-
-            { id: "PEL-28", title: "Backrooms: Sin Salida", category: "Estrenos", genre: "Terror • Misterio", img: getImg("https://image.tmdb.org/t/p/w200/w8nrM9hCTxoeX96HmTQpC0HbkMY.jpg"), desc: "Una extraña puerta aparece en el sótano de una exposición de muebles. Cuando el paciente de una terapeuta desaparece en una dimensión más allá de la realidad, ella deberá adentrarse en lo desconocido para salvarlo.", year: "2026", duration: "1h 43m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14705158916784" },
-
-            { id: "PEL-27", title: "Flow callejero 3", category: "Estrenos", genre: "Drama • Misterio", img: getImg("https://image.tmdb.org/t/p/original/dTCQ9KPhMWUM6mHWZzR4Ws1gl74.jpg"), desc: "Los hermanos Traoré, en duelo y frente a las consecuencias de sus actos, tienen una última oportunidad para forjarse un nuevo camino en la entrega final de la trilogía.", year: "2026", duration: "1h 52m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14702787168944" },
-
-            { id: "PEL-26", title: "Acusada", category: "Estrenos", genre: "Suspenso • Misterio", img: getImg("https://image.tmdb.org/t/p/original/5e98uGz4dafgJQkujLwTBqaAp7G.jpg"), desc: "La vida de una reconocida ginecóloga se sale de control cuando serias acusaciones amenazan su carrera y su matrimonio, mientras su esposa busca descubrir la verdad.", year: "2026", duration: "1h 27m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14702738541232" },
-
-            { id: "PEL-25", title: "Sesión fatal", category: "Estrenos", genre: "Suspenso • Crimen", img: getImg("https://image.tmdb.org/t/p/original/tISaeNWkqPYqSdANTTteewEMS5H.jpg"), desc: "Dos parejas llegan a una mansión rural que reservaron juntas sin saberlo, y descubren extraños sucesos durante su estancia.", year: "2026", duration: "1h 20m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14702607272624" },
-
-            { id: "PEL-24", title: "Scream 7", category: "Estrenos", genre: "Terror • Crimen", img: getImg("https://image.tmdb.org/t/p/original/5XhV5Sk7w4h2tCNvXovkFfTNRli.jpg"), desc: "La tranquila y rehecha vida Sidney Prescott se cae a pedazos cuando Ghostface llega al pueblo. Sin embargo, sus peores temores se hacen realidad cuando su hija Tatum se convierte en la próxima víctima.", year: "2026", duration: "1h 47m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14702515194544" },
-
-            { id: "PEL-23", title: "Slanted", category: "Estrenos", genre: "C. Ficción • Comedia", img: getImg("https://cuevana.gs/wp-content/uploads/thumbs/79b09689843d6a189f3bcaa9d6107a57_hd.webp"), desc: "Una insegura adolescente chino-estadounidense se somete a cirugía experimental para parecer blanca, con la esperanza de asegurarse el título de reina del baile y la aceptación de sus compañeros.", year: "2026", duration: "1h-44m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14701397871280" },
-
-            { id: "PEL-22", title: "Ice Skater", category: "Estrenos", genre: "Drama", img: getImg("https://cuevana.gs/wp-content/uploads/thumbs/5cbe069548e53b89620d7eb3ea5da16a_hd.webp"), desc: "Atrapada en una placa de hielo a la deriva en el Ártico, una patinadora artística lucha por sobrevivir mientras el hielo se fragmenta y la arrastra hacia aguas abiertas. Sin posibilidad de rescate, cada minuto es una batalla contra el frío extremo, el hambre y el agotamiento.", year: "2026", duration: "1h 23m", quality: "CAM", type: "movie", link: "https://ok.ru/videoembed/14544383904432" },
-
-            { id: "PEL-21", title: "Sangre Asesina", category: "Estrenos", genre: "Acción", img: getImg("https://cuevana.gs/wp-content/uploads/thumbs/e05f49dddcdc560c387206d9dabfba90_hd.webp"), desc: "Una mujer perseguida encuentra protección en un asesino letal.", year: "2026", duration: "2h 08m", quality: "4K", type: "movie", link: "https://ok.ru/videoembed/14544384166576" },
-
-            { id: "PEL-20", title: "Ápex", category: "Estrenos", genre: "Acción", img: getImg("https://cuevana.gs/wp-content/uploads/thumbs/8415c6eca989a9758093a10853f06006_hd.webp"), desc: "Una mujer en duelo queda atrapada en un retorcido juego mortal con un asesino.", year: "2026", duration: "1h 36m", quality: "4K", type: "movie", link: "https://ok.ru/videoembed/14553695193776" },
-
-            { id: "PEL-19", title: "Hermandad", category: "Estrenos", genre: "Acción", img: getImg("https://cuevana.gs/wp-content/uploads/thumbs/000fc3d141b9444f3becaf5b6f69b690_hd.webp"), desc: "Una abogada debe negociar con la policía para rescatar a su sobrina.", year: "2026", duration: "1h 43m", quality: "4K", type: "movie", link: "https://ok.ru/videoembed/14544384035504" },
-
-            { id: "PEL-18", title: "Cortafuego", category: "Estrenos", genre: "Drama", img: getImg("https://cuevana.gs/wp-content/uploads/thumbs/4db9d2144c51de437266bbd8caf7e8ae_hd.webp"), desc: "Mientras su familia se prepara para mudarse, Lide desaparece en el bosque. Durante su shadow, se desata un incendio, y su madre debe encontrarla antes de que lo hagan las llamas.", year: "2026", duration: "1h 47m", quality: "4K", type: "movie", link: "https://ok.ru/videoembed/14542233799344" },
-
-            { id: "PEL-17", title: "Jack Ryan de Tom Clancy: Guerra fantasma", category: "Estrenos", genre: "Acción, Drama, Suspenso", img: getImg("https://image.tmdb.org/t/p/w200/7wiq6ld0p7AeWFlZsnXZfNKXIB2.jpg"), desc: "En esta nueva película, Jack Ryan vuelve a regañadientes al espionaje cuando una misión encubierta internacional destapa una conspiración mortal.", year: "2026", duration: "1h 46m", quality: "HD", type: "movie", link: "https://ok.ru/videoembed/14634364111536" },
-
-            { id: "PEL-16", title: "The Punisher: La última muerte", category: "Estrenos", genre: "Acción, Drama, Crimen", img: getImg("https://image.tmdb.org/t/p/w200/9FQQFS8vO3Q9oJBRLPCYj8Keikg.jpg"), desc: "Frank Castle intenta vivir una vida sin necesidad de venganza como el justiciero Punisher, solo para verse envuelto en un conflicto inesperado.", year: "2026", duration: "0h 48m", quality: "HD", type: "movie", link: "https://ok.ru/videoembed/14687878646448" },
-
-            { id: "PEL-15", title: "Boy Of Your Dreams 2", category: "Estrenos", genre: "Suspenso, Terror", img: getImg("https://cuevana.gs/wp-content/uploads/thumbs/9771bd7033f8c307ca281a35147c84d9_hd.webp"), desc: "Dos chicas universitarias que se alojan en una casa de huéspedes se encuentran con un peligroso asesino en serie mít.", year: "2026", duration: "1h 38m", quality: "HD", type: "movie", link: "https://ok.ru/videoembed/14636581522096" },
-
-            { id: "PEL-14", title: "Aída y vuelta", category: "Estrenos", genre: "Comedia", img: getImg("https://image.tmdb.org/t/p/w200/k3Bk1v28P0ZVQKFL90WtttpQhEP.jpg"), desc: "En 2018, Aída sigue siendo un fenómeno televisivo. Pero la protesta de una actriz por un chiste ofensivo desata tensiones en el rodaje.", year: "2026", duration: "1h 38m", quality: "HD", type: "movie", link: "https://ok.ru/videoembed/14634363980464" },
-
-            { id: "PEL-13", title: "Inthum", category: "Estrenos", genre: "Acción, Drama, Suspenso", img: getImg("https://cuevana.gs/wp-content/uploads/thumbs/00cc60c458bdc335e34abfdae4a9fd91_hd.webp"), desc: "Al investigar una red de narcotráfico en Rusia, un agente surcoreano se topa con un agente norcoreano.", year: "2026", duration: "2h 01m", quality: "FHD", type: "movie", link: "https://ok.ru/videoembed/14636453923504" },
-
-            { id: "PEL-12", title: "Ella solo come carne", category: "Estrenos", genre: "Comedia, Terror", img: getImg("https://image.tmdb.org/t/p/w200/i3zEJNROaJHFnFk9isbLLsJYrVn.jpg"), desc: "Sofía y Minerva se enfrentan a sus múltiples problemas de muchas maneras diferentes... todas a la vez.", year: "2026", duration: "1h 12m", quality: "HD", type: "movie", link: "https://ok.ru/videoembed/14634363849392" },
-
-            { id: "PEL-11", title: "Psicópata: El Asesino del Conejo Blanco", category: "Estrenos", genre: "Suspenso, Terror", img: getImg("https://cuevana.gs/wp-content/uploads/thumbs/9b8512d8110e8f6fb9ecd8e00628f2ee_hd.webp"), desc: "Un brutal asesino en serie desafía a las autoridades a atraparlo, dejando atrás un conejo de origami.", year: "2026", duration: "1h 40m", quality: "HD", type: "movie", link: "https://ok.ru/videoembed/14634363652784" },
-
-            { id: "PEL-10", title: "Ternet Ninja 3", category: "Estrenos", genre: "Acción, Comedia, Animación", img: getImg("https://image.tmdb.org/t/p/w200/ohFFmYhbslB74AIWwF9PyJbV3aK.jpg"), desc: "En esta tercera entrega, el interés de Alex por las misiones ninja comienza a desvanecerse.", year: "2026", duration: "1h 24m", quality: "FHD", type: "movie", link: "https://ok.ru/videoembed/14634363718320" },
-
-            { id: "PEL-9", title: "Capture", category: "Estrenos", genre: "Terror", img: getImg("https://cuevana.gs/wp-content/uploads/thumbs/09dd1b820579a37cca1ce503c01e7398_hd.webp"), desc: "Aún no hemos añadido un resumen para este titulo. Estamos trabajando para agregarla pronto.", year: "2026", duration: "1h 25m", quality: "CAM", type: "movie", link: "https://ok.ru/videoembed/14634363390640" },
-
-            { id: "PEL-7", title: "En La Zona Gris", category: "Estrenos", genre: "Acción - Suspenso", img: getImg("https://image.tmdb.org/t/p/w200/yfgquGqeT6DtdsIzPPzTLRABBy0.jpg"), desc: "Gira en torno a dos especialistas en extracción que tienen que designar una ruta de escape para una negociadora de alto rango.", year: "2026", duration: "1h 38m", quality: "CAM", type: "movie", link: "https://ok.ru/videoembed/14557837068976" },
-
-            { id: "PEL-6", title: "El diablo viste a la moda 2", category: "Estrenos", genre: "Comedia - Drama", img: getImg("https://cuevana.gs/wp-content/uploads/thumbs/7aba5cec8b63b77c0f80d898f6ffcb75_hd.webp"), desc: "Sigue la lucha de Miranda Priestly contra Emily Charlton, su ex asistente convertida en ejecutiva rival.", year: "2026", duration: "1h 51m", quality: "CAM", type: "movie", link: "https://drive.google.com/file/d/1N6hiCObSkwXBXKxTreZ-6XQSzkgfHORl/preview" },
-
-            { id: "PEL-5", title: "Obsesión", category: "Estrenos", genre: "Suspenso - Terror", img: getImg("https://image.tmdb.org/t/p/w200/40I66L7QKguTFDPvcLcdiTbAD7I.jpg"), desc: "Tras romper el misterioso Sauce de un Deseo para conquistar el corazón de la chica que le gusta...", year: "2026", duration: "1h 40m", quality: "CAM", type: "movie", link: "https://ok.ru/videoembed/14553454086832" },
-
-            { id: "PEL-4", title: "Comer, rezar, ladrar", category: "Estrenos", genre: "Comedia", img: getImg("https://cuevana.gs/wp-content/uploads/thumbs/3aff46eafb85a4ece06ace1d7e2ece8e_hd.webp"), desc: "Cinco dueños de perros acuden a un legendario maestro en las montañas en busca de consejos.", year: "2026", duration: "1h 31m", quality: "FHD", type: "movie", link: "https://ok.ru/videoembed/14719715642032" },
-
-            { id: "PEL-3", title: "Super Mario Galaxy: La película", category: "Estrenos", genre: "Aventura - Animación - Familia - Comedia", img: getImg("https://cuevana.gs/wp-content/uploads/thumbs/5022671a0fe95384f73596c0df156fad_hd.webp"), desc: "Mario y Luigi se enfrentan una nueva amenaza: Bowser Jr.", year: "2026", duration: "1h 38m", quality: "FHD", type: "movie", link: "https://ok.ru/videoembed/14553725209264" },
-
-            { id: "PEL-2", title: "Mortal Kombat II", category: "Estrenos", genre: "Aventura - Acción - Fantasía", img: getImg("https://cuevana.gs/wp-content/uploads/thumbs/83d2aeedc57230d8d320d1c7f55a199a_hd.webp"), desc: "Los champions favoritos de los fans se enfrentan entre sí en la batalla definitiva.", year: "2026", duration: "1h 50m", quality: "CAM", type: "movie", link: "https://ok.ru/videoembed/14542461078192" },
-
-            { id: "PEL-1", title: "HD 🇲🇽 Michael", category: "Estrenos", genre: "Drama - Música", img: getImg("https://cuevana.gs/wp-content/uploads/thumbs/273671f175a059f3315e7492c4b83266_hd.webp"), desc: "Narra la vida de Michael Jackson más allá de la música, recorriendo su trayectoria.", year: "2026", duration: "2h 07m", quality: "CAM", type: "movie", link: "https://ok.ru/videoembed/14838223801008" },
-
-            
-             
-
-
-
-
-
-            { 
-                id: "SER-11", 
-                title: "HD 🇲🇽 Te encontraré", 
-                category: "Series", 
-                genre: "Misterio, Drama", 
-                img: getImg("https://image.tmdb.org/t/p/w200/yvZlBI21f8CqRiqVfTjMDPK1NYk.jpg"), 
-                desc: "Con una aliada inesperada de su lado, David y Rachel tienen una oportunidad de rescatar a Matthew de sus captores... antes de que desaparezca para siempre.", 
-                year: "2026", 
-                duration: "1 Temp", 
-                quality: "FHD", 
-                type: "serie", 
-                seasons: [
-                    { 
-                        name: "Temporada 1", 
-                        episodes: [
-                            { n: 1, title: "Capítulo 1", link: "https://ok.ru/videoembed/14995201591984" },
-                            { n: 2, title: "Capítulo 2", link: "https://ok.ru/videoembed/14995201854128" },
-                            { n: 3, title: "Capítulo 3", link: "https://ok.ru/videoembed/14995201526448" },
-                            { n: 4, title: "Capítulo 4", link: "https://ok.ru/videoembed/14995201657520" },
-                            { n: 5, title: "Capítulo 5", link: "https://ok.ru/videoembed/14995201723056" },
-                            { n: 6, title: "Capítulo 6", link: "https://ok.ru/videoembed/14995201460912" },
-                            { n: 7, title: "Capítulo 7", link: "https://ok.ru/videoembed/14995201329840" },
-                            { n: 8, title: "Capítulo 8", link: "https://ok.ru/videoembed/14995201395376" }
-                            
-                            
-                            
-                            
-                        ] 
-                    },
-                    { 
-                        name: "Temporada 2 Proximamente", 
-                        episodes: [
-                            { n: 1, title: "Capítulo 1", link: "" },
-                            { n: 2, title: "Capítulo 2", link: "" }
-                        ] 
-                    }
-                ] 
-            },
-            { 
-                id: "SER-10", 
-                title: "HD 🇲🇽 Alice and Steve", 
-                category: "Series", 
-                genre: "Comedia, Drama", 
-                img: getImg("https://image.tmdb.org/t/p/w200/gPou8wNiTz1uleLKllclrqanXXf.jpg"), 
-                desc: "Alice queda desolada cuando su mejor amigo Steve empieza a salir con su hija Izzy, de 26 años. Va a perder a su mejor amigo y a su hija de un plumazo. Decide utilizar todas las herramientas que tiene a su alcance para poner fin a la relación: desde amenazas, hasta ruegos, pasando por sabotear su carrera.", 
-                year: "2026", 
-                duration: "1 Temp", 
-                quality: "FHD", 
-                type: "serie", 
-                seasons: [
-                    { 
-                        name: "Temporada 1", 
-                        episodes: [
-                            { n: 1, title: "Capítulo 1", link: "https://ok.ru/videoembed/14844353972912" },
-                            { n: 2, title: "Capítulo 2", link: "https://ok.ru/videoembed/14844353841840" },
-                            { n: 3, title: "Capítulo 3", link: "https://ok.ru/videoembed/14844353907376" },
-                            { n: 4, title: "Capítulo 4", link: "https://ok.ru/videoembed/14844354103984" },
-                            { n: 5, title: "Capítulo 5", link: "https://ok.ru/videoembed/14844354038448" },
-                            { n: 6, title: "Capítulo 6", link: "https://ok.ru/videoembed/14844354169520" }
-                            
-                            
-                            
-                            
-                        ] 
-                    },
-                    { 
-                        name: "Temporada 2 Proximamente", 
-                        episodes: [
-                            { n: 1, title: "Capítulo 1", link: "" },
-                            { n: 2, title: "Capítulo 2", link: "" }
-                        ] 
-                    }
-                ] 
-            },
-            { 
-                id: "SER-9", 
-                title: "HD 🇲🇽 Among Us", 
-                category: "Series", 
-                genre: "Comedia, Animación", 
-                img: getImg("https://image.tmdb.org/t/p/w200/zQPnH87FXB6MEwRIy2xfhT41lq9.jpg"), 
-                desc: "Los miembros de tu tripulación han sido reemplazados por un cambiaformas alienígena que intenta causar confusión, sabotear la nave y matar a todos. Elimina al (impostor) o sé víctima de sus designios asesinos.", 
-                year: "2026", 
-                duration: "1 Temp", 
-                quality: "FHD", 
-                type: "serie", 
-                seasons: [
-                    { 
-                        name: "Temporada 1", 
-                        episodes: [
-                            { n: 1, title: "Capítulo 1", link: "https://drive.google.com/file/d/1ZXeMBcfwYoOvsZRKqzWIPTb4uJ2VpPev/preview" },
-                            { n: 2, title: "Capítulo 2", link: "https://drive.google.com/file/d/1IAdfTUFwwcq5ppoKujJStHlqy2O9eRrL/preview" },
-                            { n: 3, title: "Capítulo 3", link: "https://drive.google.com/file/d/1Rnn4n6nIxmuRwj0r-KZzEcIS_pSuEcBg/preview" },
-                            { n: 4, title: "Capítulo 4", link: "https://drive.google.com/file/d/16Bsf134coRwWXXpuwm8X93XIcyLcv36G/preview" },
-                            { n: 5, title: "Capítulo 5", link: "https://drive.google.com/file/d/11Qm2hWuRciZ4QuDSCPano75gQtSO4Tsa/preview" },
-                            { n: 6, title: "Capítulo 6", link: "https://drive.google.com/file/d/1rOGRwZWvwlLTVyQeGBNsPgrUFKaKzYrF/preview" },
-                            { n: 7, title: "Capítulo 7", link: "https://drive.google.com/file/d/1wySnQJgyNBnsGUFoOtu39k2VwbMbGx-p/preview" },
-                            { n: 8, title: "Capítulo 8", link: "https://drive.google.com/file/d/1Q1ziaN-f7gp2jvdlKEHPKP_pXnVIW5gi/preview" },
-                            { n: 9, title: "Capítulo 9", link: "https://drive.google.com/file/d/1qA1yK0pixBH8KHDb-Zd-PdHzaQQtoGTs/preview" },
-                            { n: 10, title: "Capítulo 10", link: "https://drive.google.com/file/d/1SjjG2arRR5p1N92elLyLokgHVKQzYOSG/preview" }
-                            
-                            
-                            
-                        ] 
-                    },
-                    { 
-                        name: "Temporada 2 Proximamente", 
-                        episodes: [
-                            { n: 1, title: "Capítulo 1", link: "" },
-                            { n: 2, title: "Capítulo 2", link: "" }
-                        ] 
-                    }
-                ] 
-            },
-            { 
-                id: "SER-8", 
-                title: "720p 🇪🇸 Los Topuria", 
-                category: "Series", 
-                genre: "Documental, UFC", 
-                img: getImg("https://image.tmdb.org/t/p/w200/kUuxTuzeHI4hbPO94ukieKJPcvC.jpg"), 
-                desc: "Ofrece a lo largo de cinco episodios un acceso inédito a la vida personal del flamante campeón mundial del peso ligero de la UFC Ilia Topuria y a su entorno más cercano.", 
-                year: "2026", 
-                duration: "1 Temp", 
-                quality: "FHD", 
-                type: "serie", 
-                seasons: [
-                    { 
-                        name: "Temporada 1", 
-                        episodes: [
-                            { n: 1, title: "Capítulo 1", link: "https://ok.ru/videoembed/14797542591152" },
-                            { n: 2, title: "Capítulo 2", link: "https://ok.ru/videoembed/14797542656688" },
-                            { n: 3, title: "Capítulo 3", link: "https://ok.ru/videoembed/14797542722224" },
-                            { n: 4, title: "Capítulo 4", link: "" },
-                            { n: 5, title: "Capítulo 5", link: "" }
-                            
-                            
-                            
-                        ] 
-                    },
-                    { 
-                        name: "Temporada 2 Proximamente", 
-                        episodes: [
-                            { n: 1, title: "Capítulo 1", link: "" },
-                            { n: 2, title: "Capítulo 2", link: "" }
-                        ] 
-                    }
-                ] 
-            },
-            { 
-                id: "SER-7", 
-                title: "🇪🇸 Los dinosaurios", 
-                category: "Series", 
-                genre: "Documental, Animales", 
-                img: getImg("https://image.tmdb.org/t/p/original/jr0MS8g4Dq3nwZQXDo5BeaP9ypu.jpg"), 
-                desc: "Desde el primero hasta el último dinosaurio, esta épica serie documental examina los 165 millones de años en que dominaron la Tierra y las fuerzas que moldearon su evolución.", 
-                year: "2026", 
-                duration: "1 Temp", 
-                quality: "FHD", 
-                type: "serie", 
-                seasons: [
-                    { 
-                        name: "Temporada 1", 
-                        episodes: [
-                            { n: 1, title: "Capítulo 1", link: "https://ok.ru/videoembed/14753397803696" },
-                            { n: 2, title: "Capítulo 2", link: "https://ok.ru/videoembed/14753433389744" },
-                            { n: 3, title: "Capítulo 3", link: "https://ok.ru/videoembed/14753475005104" },
-                            { n: 4, title: "Capítulo 4", link: "https://ok.ru/videoembed/14753528285872" },
-                            { n: 5, title: "Capítulo 5", link: "" },
-                            { n: 6, title: "Capítulo 6", link: "" },
-                            { n: 7, title: "Capítulo 7", link: "" },
-                            { n: 8, title: "Capítulo 8", link: "" }
-                            
-                            
-                        ] 
-                    },
-                    { 
-                        name: "Temporada 2 Proximamente", 
-                        episodes: [
-                            { n: 1, title: "Capítulo 1", link: "" },
-                            { n: 2, title: "Capítulo 2", link: "" }
-                        ] 
-                    }
-                ] 
-            },
-            { 
-                id: "SER-6", 
-                title: "El joven Sherlock", 
-                category: "Series", 
-                genre: "Acción, Aventura", 
-                img: getImg("https://image.tmdb.org/t/p/original/w426ObBzvHyTISiAqaeMujydmpi.jpg"), 
-                desc: "Un Sherlock Holmes de 19 años se ve enredado en un asesinato en Oxford que pone en peligro su libertad. Su primer caso, abordado imprudentemente, le lleva a descubrir una conspiración de gran alcance que altera su camino para siempre.", 
-                year: "2026", 
-                duration: "1 Temp", 
-                quality: "FHD", 
-                type: "serie", 
-                seasons: [
-                    { 
-                        name: "Temporada 1", 
-                        episodes: [
-                            { n: 1, title: "Capítulo 1", link: "https://drive.google.com/file/d/10eCeAVQGwBBvKFEdHABR-9872YIHe1r6/preview" },
-                            { n: 2, title: "Capítulo 2", link: "https://drive.google.com/file/d/16-SffqMc41hRjqRkQrE4QhcFz1K8Qd_j/preview" },
-                            { n: 3, title: "Capítulo 3", link: "https://drive.google.com/file/d/1rJyBaxiBD4zArIoe_plMY8b5OZ-yOMhL/preview" },
-                            { n: 4, title: "Capítulo 4", link: "https://drive.google.com/file/d/1dSuLrNg5n0h-o5TBYYaufV2Js-dFfkjJ/preview" },
-                            { n: 5, title: "Capítulo 5", link: "https://drive.google.com/file/d/1OqQH4pz4OCoHdB9gp-xvVFtxTGNhX4Db/preview" },
-                            { n: 6, title: "Capítulo 6", link: "https://drive.google.com/file/d/178coZ4VcydsBTKkcMDfU_MeYNJz5xYC8/preview" },
-                            { n: 7, title: "Capítulo 7", link: "https://drive.google.com/file/d/1XMaG8iRTuFJVzocv5eATnU6dhUJyVv59/preview" },
-                            { n: 8, title: "Capítulo 8", link: "https://drive.google.com/file/d/1jdQ4nA1hQNw3KTfemZA9Jx16KCew7bDc/preview" }
-                            
-                            
-                        ] 
-                    },
-                    { 
-                        name: "Temporada 2 Proximamente", 
-                        episodes: [
-                            { n: 1, title: "Capítulo 1", link: "" },
-                            { n: 2, title: "Capítulo 2", link: "" }
-                        ] 
-                    }
-                ] 
-            },
-            { 
-                id: "SER-5", 
-                title: "El Señor de las Moscas", 
-                category: "Series", 
-                genre: "Drama, Aventura", 
-                img: getImg("https://image.tmdb.org/t/p/w200/zDi4uP2N3rRARLNykg7LsM6DOua.jpg"), 
-                desc: "Los chicos intentan descubrir cuál es la mejor manera de sobrevivir después de que su avión se estrella en una isla desierta. Piggy encuentra algo que resulta útil para el grupo, pero se siente dolido cuando su nuevo amigo rompe una promesa.", 
-                year: "2026", 
-                duration: "1 Temp", 
-                quality: "FHD", 
-                type: "serie", 
-                seasons: [
-                    { 
-                        name: "Temporada 1", 
-                        episodes: [
-                            { n: 1, title: "Capítulo 1", link: "https://ok.ru/videoembed/14571253074608" },
-                            { n: 2, title: "Capítulo 2", link: "https://ok.ru/videoembed/14571253598896" },
-                            { n: 3, title: "Capítulo 3", link: "https://ok.ru/videoembed/14571253664432" },
-                            { n: 4, title: "Capítulo 4", link: "https://ok.ru/videoembed/14589482830512" }
-                           
-                            
-                            
-                        ] 
-                    },
-                    { 
-                        name: "Temporada 2 Proximamente", 
-                        episodes: [
-                            { n: 1, title: "Capítulo 1", link: "" },
-                            { n: 2, title: "Capítulo 2", link: "" }
-                        ] 
-                    }
-                ] 
-            },
-            { 
-                id: "SER-4", 
-                title: "The Boys", 
-                category: "Series", 
-                genre: "Acción, Aventura, Fantasía", 
-                img: getImg("https://image.tmdb.org/t/p/w200/5kgY14oisiHcJ4zq0Xgq1e97PHm.jpg"), 
-                desc: "La serie tiene lugar en un mundo en el que los superhéroes representan el lado oscuro de la celebridad y la fama. Un grupo de vigilantes que se hacen llamar The Boys decide hacer todo lo posible por frenar a los superhéroes que están perjudicando a la sociedad, independientemente de los riesgos que ello conlleva.", 
-                year: "2026", 
-                duration: "5 Temp", 
-                quality: "FHD", 
-                type: "serie", 
-                seasons: [
-                    { 
-                        name: "Temporada 5", 
-                        episodes: [
-
-                            { n: 1, title: "Capítulo 1", link: "https://ok.ru/videoembed/14589439183536" },
-                            { n: 2, title: "Capítulo 2", link: "https://ok.ru/videoembed/14930557602480" },
-                            { n: 3, title: "Capítulo 3", link: "https://ok.ru/videoembed/14930557405872" },
-                            { n: 4, title: "Capítulo 4", link: "https://ok.ru/videoembed/14930557733552" },
-                            { n: 5, title: "Capítulo 5", link: "https://ok.ru/videoembed/14930557668016" },
-                            { n: 6, title: "Capítulo 6", link: "https://ok.ru/videoembed/14929502538416" },
-                            { n: 7, title: "Capítulo 7", link: "https://ok.ru/videoembed/14792354433712" },
-                            { n: 8, title: "Capítulo 8", link: "https://ok.ru/videoembed/14929502603952" }
-                            
-                            
-                        ] 
-                    },
-                    { 
-                        name: "Temporada 6 Proximamente", 
-                        episodes: [
-                            { n: 1, title: "Capítulo 1", link: "" },
-                            { n: 2, title: "Capítulo 2", link: "" }
-                        ] 
-                    }
-                ] 
-            },
-            { 
-                id: "SER-3", 
-                title: "The Boroughs: Jubilación rebelde", 
-                category: "Series", 
-                genre: "Misterio, Ciencia Ficción", 
-                img: getImg("https://image.tmdb.org/t/p/w200/oKxBWbXmnWFO2Wh1QRTtshdfIRa.jpg"), 
-                desc: "En una comunidad de jubilados que parece perfecta, un grupo de héroes poco convencionales deben evitar que una amenaza de otro mundo les robe lo único que no tienen: tiempo.", 
-                year: "2026", 
-                duration: "1 Temp", 
-                quality: "HD", 
-                type: "serie", 
-                seasons: [
-                    { 
-                        name: "Temporada 1", 
-                        episodes: [
-                            { n: 1, title: "Capítulo 1", link: "https://ok.ru/videoembed/14571570137776" },
-                            { n: 2, title: "Capítulo 2", link: "https://ok.ru/videoembed/14571570203312" },
-                            { n: 3, title: "Capítulo 3", link: "https://ok.ru/videoembed/14571570268848" },
-                            { n: 4, title: "Capítulo 4", link: "https://ok.ru/videoembed/14571253205680" },
-                            { n: 5, title: "Capítulo 5", link: "https://ok.ru/videoembed/14571253467824" },
-                            { n: 6, title: "Capítulo 6", link: "https://ok.ru/videoembed/14571253140144" },
-                            { n: 7, title: "Capítulo 7", link: "https://ok.ru/videoembed/14571253336752" },
-                            { n: 8, title: "Capítulo 8", link: "https://ok.ru/videoembed/14631747455664" }
-                            
-                        ] 
-                    },
-                    { 
-                        name: "Temporada 2 Proximamente", 
-                        episodes: [
-                            { n: 1, title: "Capítulo 1", link: "" },
-                            { n: 2, title: "Capítulo 2", link: "poner aqui el link" }
-                        ] 
-                    }
-                ] 
-            },
-            { 
-                id: "SER-1", 
-                title: "Star Wars: Maul", 
-                category: "Series", 
-                genre: "Animación", 
-                img: getImg("https://cuevana.gs/wp-content/uploads/thumbs/eb29b536d6a9aa67965df11a3d6dd718_hd.webp"), 
-                desc: "Maul se alza de nuevo para liderar las facciones del hampa.", 
-                year: "2026", 
-                duration: "1 Temp", 
-                quality: "HD", 
-                type: "serie", 
-                seasons: [
-                    { 
-                        name: "Temporada 1", 
-                        episodes: [
-                            { n: 1, title: "Capítulo 1", link: "https://ok.ru/videoembed/14704996977328" },
-                            { n: 2, title: "Capítulo 2", link: "https://ok.ru/videoembed/14705060678320" },
-                            { n: 3, title: "Capítulo 3", link: "https://ok.ru/videoembed/14705071033008" },
-                            { n: 4, title: "Capítulo 4", link: "https://ok.ru/videoembed/14705078897328" },
-                            { n: 5, title: "Capítulo 5", link: "https://ok.ru/videoembed/14705089317552" },
-                            { n: 6, title: "Capítulo 6", link: "https://ok.ru/videoembed/14705099147952" },
-                            { n: 7, title: "Capítulo 7", link: "https://ok.ru/videoembed/14705111993008" },
-                            { n: 8, title: "Capítulo 8", link: "https://ok.ru/videoembed/14705127525040" },
-                            { n: 9, title: "Capítulo 9", link: "https://ok.ru/videoembed/14705138666160" },
-                            { n: 10, title: "Capítulo 10", link: "https://ok.ru/videoembed/14705153215152" }
-                        ] 
-                    },
-                    { 
-                        name: "Temporada 2 Proximamente", 
-                        episodes: [
-                            { n: 1, title: "Capítulo 1", link: "poner aqui el link" },
-                            { n: 2, title: "Capítulo 2", link: "poner aqui el link" }
-                        ] 
-                    }
-                ] 
-            },
-            { 
-                id: "SER-2", 
-                title: "Berlín y la dama del armiño", 
-                category: "Series", 
-                genre: "Drama, Crimen", 
-                img: getImg("https://image.tmdb.org/t/p/w200/3uhJ3AHKxSsEWe1BUG9pV0bpqna.jpg"), 
-                desc: "Berlín, ansioso por dar un nuevo golpe, reúne a su banda en Sevilla y convierte a un ambicioso duque en víctima de su propio plan: robar una obra de arte de Leonardo da Vinci.", 
-                year: "2026", 
-                duration: "1 Temp", 
-                quality: "FHD", 
-                type: "serie", 
-                seasons: [
-                    { 
-                        name: "Temporada 1", 
-                        episodes: [
-                            { n: 1, title: "Capítulo 1", link: "https://ok.ru/videoembed/14558591716016" },
-                            { n: 2, title: "Capítulo 2", link: "https://ok.ru/videoembed/14557859416752" },
-                            { n: 3, title: "Capítulo 3", link: "https://ok.ru/videoembed/14557859613360" },
-                            { n: 4, title: "Capítulo 4", link: "https://ok.ru/videoembed/14557859744432" },
-                            { n: 5, title: "Capítulo 5", link: "https://ok.ru/videoembed/14557860203184" },
-                            { n: 6, title: "Capítulo 6", link: "https://ok.ru/videoembed/14569286601392" },
-                            { n: 7, title: "Capítulo 7", link: "https://ok.ru/videoembed/14557859875504" },
-                            { n: 8, title: "Capítulo 8", link: "https://ok.ru/videoembed/14557860072112" }
-                        ] 
-                    },
-                    { 
-                        name: "Temporada 2 Proximamente", 
-                        episodes: [
-                            { n: 1, title: "Capítulo 1", link: "poner aqui el link" },
-                            { n: 2, title: "Capítulo 2", link: "poner aqui el link" }
-                        ] 
-                    }
-                ] 
-            },
-
-
-
-
-
-
-
-
-
-
-
-
-            { 
-                id: "DOR-6", 
-                title: "HD 🇲🇽 Hit viral", 
-                category: "Doramas", 
-                genre: "Aventura, Drama", 
-                img: getImg("https://image.tmdb.org/t/p/w200/cjy716l2l6uCCbvkkRgFReCdjYF.jpg"), 
-                desc: "Kota Shimura es un estudiante marginado que vive en la pobreza y sufre acoso constante en el instituto. Tras una pelea que se vuelve viral en directo, descubre que puede ganar dinero con sus habilidades de combate y lanza un canal de streaming llamado Viral Hit, iniciando así su intento de salir adelante.", 
-                year: "2026", 
-                duration: "1 Temp", 
-                quality: "FHD", 
-                type: "serie", 
-                seasons: [
-                    { 
-                        name: "Temporada 1", 
-                        episodes: [
-                            { n: 1, title: "Episodio 1", link: "https://ok.ru/videoembed/15005790505648" },
-                            { n: 2, title: "Episodio 2", link: "https://ok.ru/videoembed/15005790571184" },
-                            { n: 3, title: "Episodio 3", link: "https://ok.ru/videoembed/15005790440112" },
-                            { n: 4, title: "Episodio 4", link: "https://ok.ru/videoembed/15005790767792" },
-                            { n: 5, title: "Episodio 5", link: "https://ok.ru/videoembed/15005790309040" },
-                            { n: 6, title: "Episodio 6", link: "https://ok.ru/videoembed/15005790177968" }
-                            
-                            
-                        ] 
-                    },
-                    { 
-                        name: "Temporada 2 Proximamente", 
-                        episodes: [
-                            { n: 1, title: "Episodio 1", link: "" },
-                            { n: 2, title: "Episodio 2", link: "" }
-                        ] 
-                    }
-                ] 
-            },
-            { 
-                id: "DOR-5", 
-                title: "HD 🇪🇸 Así aprenderás", 
-                category: "Doramas", 
-                genre: "Comedia, Drama", 
-                img: getImg("https://image.tmdb.org/t/p/w200/lG83nWVT7cHl3nSxonaYhOjqyWH.jpg"), 
-                desc: "Cuando ya nadie respeta nada en las escuelas, un equipo de inspectores llega para poner las cosas en orden con enseñanzas estrictas y efectivas que no aparecen en los libros.", 
-                year: "2026", 
-                duration: "1 Temp", 
-                quality: "FHD", 
-                type: "serie", 
-                seasons: [
-                    { 
-                        name: "Temporada 1", 
-                        episodes: [
-                            { n: 1, title: "Episodio 1", link: "https://ok.ru/videoembed/14797687491248" },
-                            { n: 2, title: "Episodio 2", link: "https://ok.ru/videoembed/14797687687856" },
-                            { n: 3, title: "Episodio 3", link: "https://ok.ru/videoembed/14797688408752" },
-                            { n: 4, title: "Episodio 4", link: "https://ok.ru/videoembed/14797687818928" },
-                            { n: 5, title: "Episodio 5", link: "https://ok.ru/videoembed/14797688343216" },
-                            { n: 6, title: "Episodio 6", link: "https://ok.ru/videoembed/14797688015536" },
-                            { n: 7, title: "Episodio 7", link: "https://ok.ru/videoembed/14797688474288" },
-                            { n: 8, title: "Episodio 8", link: "https://ok.ru/videoembed/14797688212144" },
-                            { n: 9, title: "Episodio 9", link: "https://ok.ru/videoembed/14797688081072" },
-                            { n: 10, title: "Episodio 10", link: "https://ok.ru/videoembed/14797688146608" }
-                            
-                        ] 
-                    },
-                    { 
-                        name: "Temporada 2 Proximamente", 
-                        episodes: [
-                            { n: 1, title: "Episodio 1", link: "" },
-                            { n: 2, title: "Episodio 2", link: "" }
-                        ] 
-                    }
-                ] 
-            },
-            { 
-                id: "DOR-4", 
-                title: "El arte de Sarah", 
-                category: "Doramas", 
-                genre: "Drama, Crimen, Misterio", 
-                img: getImg("https://cuevana.gs/wp-content/uploads/thumbs/4437471ac4f2059b7ef3185ef0a42a9b_hd.webp"), 
-                desc: "Un cadáver en medio de la ciudad. Una marca de lujo en alza. Un detective que sigue de cerca cada giro en la cambiante historia de una mujer. ¿Qué sucedió realmente?", 
-                year: "2026", 
-                duration: "1 Temp", 
-                quality: "FHD", 
-                type: "serie", 
-                seasons: [
-                    { 
-                        name: "Temporada 1", 
-                        episodes: [
-                            { n: 1, title: "Episodio 1", link: "https://ok.ru/videoembed/14605633522352" },
-                            { n: 2, title: "Episodio 2", link: "https://ok.ru/videoembed/14606251330224" },
-                            { n: 3, title: "Episodio 3", link: "https://ok.ru/videoembed/14606443874992" },
-                            { n: 4, title: "Episodio 4", link: "https://ok.ru/videoembed/14606516685488" },
-                            { n: 5, title: "Episodio 5", link: "https://ok.ru/videoembed/14606570490544" },
-                            { n: 6, title: "Episodio 6", link: "https://ok.ru/videoembed/14606638058160" },
-                            { n: 7, title: "Episodio 7", link: "https://ok.ru/videoembed/14606781909680" },
-                            { n: 8, title: "Episodio 8", link: "https://ok.ru/videoembed/14606930152112" }
-                            
-                        ] 
-                    },
-                    { 
-                        name: "Temporada 2 Proximamente", 
-                        episodes: [
-                            { n: 1, title: "Episodio 1", link: "" },
-                            { n: 2, title: "Episodio 2", link: "" }
-                        ] 
-                    }
-                ] 
-            },
-            { 
-                id: "DOR-3", 
-                title: "My Royal Nemesis", 
-                category: "Doramas", 
-                genre: "Fantasía, Misterio, Ciencia Ficción", 
-                img: getImg("https://doramasflix.co/_next/image?url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Fw342%2FrYLQbyIvbEd0lF84iXrx7CbPcBB.jpg&w=342&q=75"), 
-                desc: "Una pérfida coreana de la era Joseon es condenada a muerte… y abre los ojos en la actual Seúl, donde el vil heredero de un ‘chaebol’ parece la única opción para cambiar su destino.", 
-                year: "2026", 
-                duration: "1 Temp", 
-                quality: "FHD", 
-                type: "serie", 
-                seasons: [
-                    { 
-                        name: "Temporada 1", 
-                        episodes: [
-                            { n: 1, title: "Episodio 1", link: "https://ok.ru/videoembed/14571655400112" },
-                            { n: 2, title: "Episodio 2", link: "https://ok.ru/videoembed/14571655465648" },
-                            { n: 3, title: "Episodio 3", link: "https://ok.ru/videoembed/14571655531184" },
-                            { n: 4, title: "Episodio 4", link: "https://ok.ru/videoembed/14571655924400" },
-                            { n: 5, title: "Episodio 5", link: "https://ok.ru/videoembed/14571655793328" },
-                            { n: 6, title: "Episodio 6 (en emisión)", link: "" },
-                            { n: 7, title: "Episodio 7", link: "" },
-                            { n: 8, title: "Episodio 8", link: "" },
-                            { n: 9, title: "Episodio 9", link: "" },
-                            { n: 10, title: "Episodio 10", link: "" },
-                            { n: 11, title: "Episodio 11", link: "" },
-                            { n: 12, title: "Episodio 12", link: "" },
-                            { n: 13, title: "Episodio 13", link: "" },
-                            { n: 14, title: "Episodio 14", link: "" }
-                        ] 
-                    },
-                    { 
-                        name: "Temporada 2 Proximamente", 
-                        episodes: [
-                            { n: 1, title: "Episodio 1", link: "poner aqui el link del cap 1 de la temp 2" },
-                            { n: 2, title: "Episodio 2", link: "poner aqui el link del cap 2 de la temp 2" }
-                        ] 
-                    }
-                ] 
-            },
-            { 
-                id: "DOR-1", 
-                title: "Beso de sirena", 
-                category: "Doramas", 
-                genre: "Drama, Crimen, Misterio", 
-                img: getImg("https://cuevana.gs/wp-content/uploads/thumbs/c18f1735d2b4d9c24bdf0f44c0247c01_hd.webp"), 
-                desc: "Cha Wooseok recibe una misteriosa llamada de una informante que afirma tener pruebas de un asesinato relacionado con un fraude. Antes de revelar la verdad, la informante muere. La investigación de Wooseok lo lleva a la Subasta Real y a su subastadora principal, Han Seol-ah, cuyos tres prometidos han muerto en circunstancias sospechosas. Para revelar la verdad, o quizás para ponerla a prueba, Wooseok propone fingir una relación. Al descubrir sus secretos, se da cuenta de que podría haber caído en una red de la que no puede escapar, y que escapar podría costarle todo.", 
-                year: "2026", 
-                duration: "1 Temp", 
-                quality: "FHD", 
-                type: "serie", 
-                seasons: [
-                    { 
-                        name: "Temporada 1", 
-                        episodes: [
-                            { n: 1, title: "Episodio 1", link: "https://ok.ru/videoembed/14543317961392" },
-                            { n: 2, title: "Episodio 2", link: "https://ok.ru/videoembed/14543396473520" },
-                            { n: 3, title: "Episodio 3", link: "https://ok.ru/videoembed/14543512799920" },
-                            { n: 4, title: "Episodio 4", link: "https://ok.ru/videoembed/14543726840496" },
-                            { n: 5, title: "Episodio 5", link: "https://ok.ru/videoembed/14543830256304" },
-                            { n: 6, title: "Episodio 6", link: "https://ok.ru/videoembed/14569887697584" },
-                            { n: 7, title: "Episodio 7", link: "https://ok.ru/videoembed/14558744218288" },
-                            { n: 8, title: "Episodio 8", link: "https://ok.ru/videoembed/14569887828656" },
-                            { n: 9, title: "Episodio 9", link: "https://ok.ru/videoembed/14569888025264" },
-                            { n: 10, title: "Episodio 10", link: "https://ok.ru/videoembed/14558744611504" },
-                            { n: 11, title: "Episodio 11", link: "https://ok.ru/videoembed/14558744414896" },
-                            { n: 12, title: "Episodio 12", link: "https://ok.ru/videoembed/14558744545968" }
-                        ] 
-                    },
-                    { 
-                        name: "Temporada 2 Proximamente", 
-                        episodes: [
-                            { n: 1, title: "Episodio 1", link: "poner aqui el link del cap 1 de la temp 2" },
-                            { n: 2, title: "Episodio 2", link: "poner aqui el link del cap 2 de la temp 2" }
-                        ] 
-                    }
-                ] 
-            },
-
-
-
-            { 
-                id: "DOR-2", 
-                title: "720p 🇪🇸 The WONDERfools", 
-                category: "Doramas", 
-                genre: "Comedia, Drama, Ciencia Ficción, Aventura", 
-                img: getImg("https://image.tmdb.org/t/p/w200/zEZuIW4UDU9OHTwN7zMf8BE5tOF.jpg"), 
-                desc: "En esta comedia de acción ambientada en la previa a un cambio de siglo, un disparatado grupo recibe superpoderes y lucha contra el mal, mientras el pánico se extiende.", 
-                year: "2026", 
-                duration: "1 Temp", 
-                quality: "FHD", 
-                type: "serie", 
-                seasons: [
-                    { 
-                        name: "Temporada 1", 
-                        episodes: [
-                            { n: 1, title: "Episodio 1", link: "https://ok.ru/videoembed/14811599604400" },
-                            { n: 2, title: "Episodio 2", link: "https://ok.ru/videoembed/14811599801008" },
-                            { n: 3, title: "Episodio 3", link: "https://ok.ru/videoembed/14811599932080" },
-                            { n: 4, title: "Episodio 4", link: "https://ok.ru/videoembed/14811600128688" },
-                            { n: 5, title: "Episodio 5", link: "https://ok.ru/videoembed/14811599997616" },
-                            { n: 6, title: "Episodio 6", link: "https://ok.ru/videoembed/14811600259760" },
-                            { n: 7, title: "Episodio 7", link: "https://ok.ru/videoembed/14811600390832" },
-                            { n: 8, title: "Episodio 8", link: "https://ok.ru/videoembed/14811615595184" }
-                        ] 
-                    },
-                    { 
-                        name: "Temporada 2 Proximamente", 
-                        episodes: [
-                            { n: 1, title: "Episodio 1", link: "poner aqui el link del cap 1 de la temp 2" },
-                            { n: 2, title: "Episodio 2", link: "poner aqui el link del cap 2 de la temp 2" }
-                        ] 
-                    }
-                ] 
-            },
-
-
-
-
-
-
-
-            { id: "DOC-9", title: "HD 🇪🇸 McCartney: La búsqueda del bajo perdido 8.4", category: "Documentales", genre: "Música", img: getImg("https://image.tmdb.org/t/p/w200/uC6Zx4uy4C4eGcrJZk7iN34G8Uv.jpg"), desc: "Durante más de cincuenta años, la desaparición del bajo Höfner original de Paul McCartney ha sido uno de los misterios más persistentes del rock and roll. La búsqueda del bajo perdido narra la extraordinaria historia de este icónico instrumento y la incansable búsqueda de sus fans para encontrarlo.", year: "2026", duration: "1h 27m", quality: "HD", type: "movie", link: "https://ok.ru/videoembed/15025513499312" },
-
-            { id: "DOC-8", title: "HD 🇪🇸 Somos Jeni", category: "Documentales", genre: "Crimen", img: getImg("https://image.tmdb.org/t/p/w200/pKRpd4HI2nrQCaY9DB91ji5hFHs.jpg"), desc: "Desde muy joven, Jeni soportó años de abuso sexual por parte de su padre y luchó por encontrar a alguien que le creyera. Desarrolló Trastorno de Identidad Disociativo, creando más de 2.500 alters para protegerse a sí misma.", year: "2026", duration: "1h 28m", quality: "HD", type: "movie", link: "https://ok.ru/videoembed/14943533402800" },
-
-            { id: "DOC-7", title: "HD 🇪🇸 El asesinato de Rachel Nickell", category: "Documentales", genre: "Crimen", img: getImg("https://image.tmdb.org/t/p/w200/ibTNWrpUGsSuv7PbVRIgr97jDVs.jpg"), desc: "Asesinan a una madre joven a plena luz del día y frente a su hijito en Wimbledon Common, Londres. Este documental examina este caso de homicidio que quedó sin resolver por años.", year: "2026", duration: "1h 36m", quality: "HD", type: "movie", link: "https://ok.ru/videoembed/14791561710256" },
-
-            { id: "DOC-6", title: "En busca de Harry: El arte detrás de la magia", category: "Documentales", genre: "Historia", img: getImg("https://image.tmdb.org/t/p/w200/v9kNDfpOG7o2W6mHfUltypvZEPa.jpg"), desc: "Narrado por Nick Frost, que interpreta a Hagrid en Harry Potter de HBO, y con la participación de miembros clave del reparto directamente desde la mesa de profesores, como John Lithgow, Janet McTeer y Paapa Essiedu, este especial exclusivo promete una mirada al interior de la escala épica y el cuidado meticuloso que hay detrás de la nueva serie.", year: "2026", duration: "0h 25m", quality: "HD", type: "movie", link: "https://ok.ru/videoembed/14571602840240" },
-
-            { id: "DOC-5", title: "Al descubierto: El tiroteo en Hawthorne Hill", category: "Documentales", genre: "Drama", img: getImg("https://image.tmdb.org/t/p/w200/6K0qTMozHAzzYVsWQrXxmqCC5wY.jpg"), desc: "Una discusión acalorada entre un entrenador de equitación y su alumna desemboca en un acto de violencia atroz. Un documental sobre crímenes reales repleto de giros.", year: "2026", duration: "1h 13m", quality: "HD", type: "movie", link: "https://ok.ru/videoembed/14571602643632" },
-
-            { id: "DOC-4", title: "Chernobyl: 48 Horas para Escapar", category: "Documentales", genre: "Historia", img: getImg("https://image.tmdb.org/t/p/w200/mLAKfnnme2CL4Ge5gaeAm4ZomkC.jpg"), desc: "Testigos, supervivientes y héroes de primera línea rememoran los primeros días del desastre de Chernóbil en abril de 1986. Incluye imágenes de archivo inéditas del peor accidente nuclear de la historia.", year: "2026", duration: "1h 08m", quality: "HD", type: "movie", link: "https://ok.ru/videoembed/14705210690224" },
-
-            { id: "DOC-3", title: "Billie Eilish - Hit Me Hard and Soft: El tour en 3D", category: "Documentales", genre: "Música", img: getImg("https://cuevana.gs/wp-content/uploads/thumbs/5007ff8b1bea1279e3a7f0d313747e18_hd.webp"), desc: "Concierto de Billie Eilish dirigido por Billie Eilish y James Cameron. Capturado durante su gira mundial con todas las entradas agotadas, ofrece una innovadora experiencia de concierto en la gran pantalla de una de las artistas más celebradas y exitosas de su generación.", year: "2026", duration: "2h 27m", quality: "CAM", type: "movie", link: "https://ok.ru/videoembed/14705277078192" },
-
-            { id: "DOC-1", title: "Landa", category: "Documentales", genre: "España", img: getImg("https://image.tmdb.org/t/p/w200/kcEoJ8WfJz4wzMOGr2hLphoZIKI.jpg"), desc: "Retrato de Alfredo Landa, el actor más popular del cine español. Desde su afición por el landismo hasta sus papeles más memorables, con muestras de cariño popular, prestigiosos premios, material inédito y testimonios íntimos sobre la persona detrás del intérprete.", year: "2026", duration: "1h 10m", quality: "FHD", type: "movie", link: "https://ok.ru/videoembed/14553466931888" },
-
-            { id: "DOC-2", title: "Iron Maiden: Burning Ambition", category: "Documentales", genre: "Música", img: getImg("https://cuevana.gs/wp-content/uploads/thumbs/4462cfc1fc0a4a8fbf22f303d79af0a0_hd.webp"), desc: "Con un acceso sin precedentes a los archivos oficiales y recuerdos íntimos de los miembros de la banda, tanto actuales como pasados, «Iron Maiden: Burning Ambition» invita a los fans a vivir uno de los viajes más icónicos en la historia de la música. A lo largo de cinco décadas, este electrizante documental recorre el ascenso de la banda desde los pubs del este de Londres hasta los estadios más grandes del mundo. Con entrevistas exclusivas con los integrantes del grupo y colaboradores como Javier Bardem, Lars Ulrich y Chuck D, además de secuencias animadas totalmente nuevas de su legendaria mascota, Eddie, la película ofrece una mirada única e íntima a la visión inquebrantable de Iron Maiden y su conexión eterna con su ejército global de seguidores.", year: "2026", duration: "1h 50m", quality: "CAM", type: "movie", link: "https://ok.ru/videoembed/14558891608752" }
-
-
-
+            { id: "PEL-34", title: "HD 🇲🇽 Mortal Kombat II", category: "Estrenos", genre: "Acción • Aventura", img: getImg("https://image.tmdb.org/t/p/w200/niXSl8jLAZu9fL1ywfNyLGCRXLh.jpg"), desc: "Los campeones favoritos de los fans —ahora acompañados por el mismísimo Johnny Cage— se enfrentan entre sí en la batalla definitiva, sangrienta y sin reglas, para derrotar el oscuro dominio de Shao Kahn, que amenaza con destruir el Reino de la Tierra y a sus defensores.", year: "2026", duration: "1h 55m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14990875888304" }
         ];
 
-        function renderAll() {
+        let viewStack = ['home-view'];
+
+        function renderMovies(movieList) {
             const container = document.getElementById('main-content');
             container.innerHTML = '';
-            ["Estrenos", "Series", "Doramas", "Documentales"].forEach(cat => {
-                const list = movies.filter(m => m.category === cat);
-                if(list.length > 0) {
-                    let html = `<div class="section-title">${cat}</div><div class="carousel">`;
-                    list.forEach(m => {
-                        html += `<div class="movie-card" onclick="openDetails('${m.id}')"><div class="img-container"><img data-src="${m.img}" class="lazy"></div><span>${m.title}</span></div>`;
-                    });
-                    container.innerHTML += html + `</div>`;
-                }
-            });
-            updateLazyLoad();
-        }
-
-        function filter(c, el) {
-            document.querySelectorAll('.genre-pill').forEach(p => p.classList.remove('active'));
-            el.classList.add('active');
-            const container = document.getElementById('main-content');
-            if(c === 'Todos') { renderAll(); return; }
-            const filtered = movies.filter(m => m.category === c);
-            let html = `<div class="section-title">${c}</div><div class="grid-view">`;
-            filtered.forEach(m => {
-                html += `<div class="movie-card" onclick="openDetails('${m.id}')"><div class="img-container"><img data-src="${m.img}" class="lazy"></div><span>${m.title}</span></div>`;
-            });
-            container.innerHTML = html + `</div>`;
-            updateLazyLoad();
-            window.scrollTo(0,0);
-        }
-
-        function updateLazyLoad() { document.querySelectorAll('.lazy').forEach(img => observer.observe(img)); }
-
-
-
-
-
-        function openDetails(id) {
-    const m = movies.find(x => x.id === id);
-    document.getElementById('detTitle').innerText = m.title;
-    document.getElementById('detDesc').innerText = m.desc;
-    document.getElementById('hero').style.backgroundImage = `url(${m.img})`;
-    document.getElementById('detMeta').innerHTML = `<span class="tag" style="color:var(--blue)">${m.year}</span><span class="tag">${m.genre}</span><span class="tag">${m.duration}</span>`;
-    const area = document.getElementById('actions-area');
-    
-    if(m.type === 'movie') {
-        area.innerHTML = `<div class="btn-group"><button class="btn-main-play" onclick="play('${m.link}')">▶ REPRODUCIR</button></div>`;
-    } else {
-        let sHtml = '';
-        m.seasons.forEach(s => {
-            sHtml += `<div class="season-header">${s.name}</div>`;
             
-            // Detectamos si es una sección o temporada futura entera
-            const esTemporadaFutura = s.name.toLowerCase().includes("proxima");
-
-            s.episodes.forEach(e => { 
-                // Si el link está vacío o es de relleno
-                if(e.link === "" || e.link.includes("poner aqui") || e.link === "video") {
-                    if (esTemporadaFutura) {
-                        // Si la temporada es "Próximamente", el tag sale en gris claro
-                        sHtml += `<div class="episode-row" style="opacity: 0.5;"><div>Ep. ${e.n}</div><span style="color: #86868b; font-size: 11px; font-weight: 700; background: #222; padding: 5px 10px; border-radius: 8px;">⏳ PRÓXIMAMENTE</span></div>`;
-                    } else {
-                        // Si es la temporada actual pero no hay link, sale "En Emisión" en un naranja/amarillo llamativo
-                        sHtml += `<div class="episode-row" style="opacity: 0.8; border-color: rgba(255, 149, 0, 0.3);"><div>Ep. ${e.n}</div><span style="color: #ff9500; font-size: 11px; font-weight: 700; background: rgba(255, 149, 0, 0.1); padding: 5px 10px; border-radius: 8px;">🕒 EN EMISIÓN</span></div>`;
-                    }
-                } else {
-                    // Si hay link, botón "VER" normal
-                    sHtml += `<div class="episode-row"><div>Ep. ${e.n}</div><button class="btn-play-ep" onclick="play('${e.link}')">VER</button></div>`; 
-                }
-            });
-        });
-        area.innerHTML = sHtml;
-    }
-    document.getElementById('details-view').style.display = 'block';
-}
-
-
-
-        function play(url) {
-            let finalUrl = url;
-            if (url.includes('drive.google.com')) {
-                let cid = url.includes('/d/') ? url.split('/d/')[1].split('/')[0] : url;
-                finalUrl = `https://drive.google.com/file/d/${cid}/preview`;
+            if(movieList.length === 0) {
+                container.innerHTML = '<p style="text-align:center;color:var(--gray);margin-top:40px;">No se encontraron resultados</p>';
+                return;
             }
 
-            const player = document.getElementById('player');
-            player.src = finalUrl;
+            // Dividido en categorías dinámicas para simular filas de televisión (Estilo Netflix)
+            const categories = [...new Set(movieList.map(m => m.category))];
             
-            player.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture');
-            document.getElementById('video-view').style.display = 'block';
+            categories.forEach(cat => {
+                const sec = document.createElement('div');
+                sec.innerHTML = `<div class="section-title">${cat}</div>`;
+                const car = document.createElement('div');
+                car.className = 'carousel';
+                
+                movieList.filter(m => m.category === cat).forEach(m => {
+                    const card = document.createElement('div');
+                    card.className = 'movie-card';
+                    card.setAttribute('tabindex', '0'); // HACE ENFOCABLE EL ELEMENTO EN LA TV
+                    card.onclick = () => openDetails(m.id);
+                    card.innerHTML = `
+                        <div class="img-container">
+                            <img data-src="${m.img}" alt="${m.title}">
+                        </div>
+                        <span>${m.title}</span>
+                    `;
+                    car.appendChild(card);
+                    observer.observe(card.querySelector('img'));
+                });
+                sec.appendChild(car);
+                container.appendChild(sec);
+            });
+        }
+
+        function filter(category, el) {
+            document.querySelectorAll('.genre-pill').forEach(p => p.classList.remove('active'));
+            if(el) el.classList.add('active');
+            
+            if(category === 'Todos') {
+                renderMovies(movies);
+            } else {
+                renderMovies(movies.filter(m => m.category === category));
+            }
+        }
+
+        function search() {
+            const query = document.getElementById('searchInp').value.toLowerCase();
+            const filtered = movies.filter(m => m.title.toLowerCase().includes(query) || m.genre.toLowerCase().includes(query));
+            renderMovies(filtered);
+        }
+
+        function openDetails(id) {
+            const movie = movies.find(m => m.id === id);
+            if(!movie) return;
+
+            document.getElementById('detTitle').innerText = movie.title;
+            document.getElementById('detDesc').innerText = movie.desc;
+            document.getElementById('hero').style.backgroundImage = `url(${movie.img})`;
+            
+            document.getElementById('detMeta').innerHTML = `
+                <span class="tag">${movie.year}</span>
+                <span class="tag">${movie.duration}</span>
+                <span class="tag" style="color:var(--blue)">${movie.genre}</span>
+            `;
+
+            const actions = document.getElementById('actions-area');
+            actions.innerHTML = '';
+            
+            if(movie.type === 'movie') {
+                actions.innerHTML = `
+                    <div class="btn-group">
+                        <button class="btn-main-play focusable" tabindex="0" onclick="playVideo('${movie.link}')">▶ REPRODUCIR PELÍCULA</button>
+                    </div>
+                `;
+            }
+
+            switchView('details-view');
+            // Autoenfoque al botón principal en TV
+            setTimeout(() => {
+                const playBtn = document.querySelector('.btn-main-play');
+                if(playBtn) playBtn.focus();
+            }, 100);
+        }
+
+        function playVideo(url) {
+            document.getElementById('player').src = url;
+            switchView('video-view');
         }
 
         function openTutorial() {
-            document.getElementById('tutorialPlayer').src = "https://www.youtube.com/embed/CI59s7eGoIQ?autoplay=1&loop=1&playlist=CI59s7eGoIQ";
-            document.getElementById('tutorial-view').style.display = 'block';
-        }
-
-        function closeTutorial() {
-            document.getElementById('tutorial-view').style.display = 'none';
-            document.getElementById('tutorialPlayer').src = "";
-        }
-
-        function goBack() {
-            const videoView = document.getElementById('video-view');
-            const detailsView = document.getElementById('details-view');
-
-            if (videoView.style.display === 'block') {
-                videoView.style.display = 'none';
-                document.getElementById('player').src = '';
-            } else if (detailsView.style.display === 'block') {
-                detailsView.style.display = 'none';
+            switchView('tutorial-view');
+            // El reproductor de tutorial o música de fondo requiere click previo por políticas de Smart TVs.
+            // Activamos de manera segura solo tras la interacción de apertura.
+            const bgAudio = document.getElementById('bgMusic');
+            if(bgAudio) {
+                bgAudio.play().catch(() => console.log("Autoplay bloqueado por el televisor. Requiere interacción manual previa."));
             }
         }
 
+        function closeTutorial() {
+            const bgAudio = document.getElementById('bgMusic');
+            if(bgAudio) bgAudio.pause();
+            goBack();
+        }
+
         function shareApp() {
-            const msg = encodeURIComponent("🎬 ¡Mira lo último del cine y series gratis en PelisVIP! 🍿\n\nDescárgala aquí: http://aftv.news/8688335");
-            window.open(`https://api.whatsapp.com/send?text=${msg}`);
+            if (navigator.share) {
+                navigator.share({ title: 'PelisVIP', text: '¡Mira PelisVIP Premium!', url: window.location.href });
+            } else {
+                alert('Enlace copiado: ' + window.location.href);
+            }
         }
-        
-        function search() {
-            const q = document.getElementById('searchInp').value.toLowerCase();
-            const container = document.getElementById('main-content');
-            if(q === "") { renderAll(); return; }
-            const f = movies.filter(m => m.title.toLowerCase().includes(q));
-            let html = `<div class="grid-view">`;
-            f.forEach(m => { html += `<div class="movie-card" onclick="openDetails('${m.id}')"><div class="img-container"><img data-src="${m.img}" class="lazy"></div><span>${m.title}</span></div>`; });
-            container.innerHTML = html + `</div>`;
-            updateLazyLoad();
+
+        function switchView(viewId) {
+            document.getElementById(viewStack[viewStack.length - 1]).style.display = 'none';
+            document.getElementById(viewId).style.display = 'block';
+            viewStack.push(viewId);
         }
-        window.onload = renderAll;
+
+        function goBack() {
+            if(viewStack.length > 1) {
+                const currentView = viewStack.pop();
+                document.getElementById(currentView).style.display = 'none';
+                
+                if(currentView === 'video-view') {
+                    document.getElementById('player').src = ''; // Detiene el iframe de video en segundo plano
+                }
+                
+                const prevView = viewStack[viewStack.length - 1];
+                document.getElementById(prevView).style.display = 'block';
+            }
+        }
+
+        // SISTEMA AUTOMÁTICO DE NAVEGACIÓN D-PAD POR TECLADO / CONTROL REMOTO (Para TV Box y Smart TVs)
+        document.addEventListener('keydown', (e) => {
+            const active = document.activeElement;
+            
+            // Si el usuario está escribiendo en el buscador, no interferimos con las flechas
+            if (active && active.id === 'searchInp' && e.key !== 'Enter' && e.key !== 'ArrowDown') return;
+
+            // Mapeo de teclas estándar de mandos de televisión y TV Boxes
+            const keys = ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'Enter', 'Escape', 'BackSpace'];
+            if (!keys.includes(e.key) && e.keyCode !== 13 && e.keyCode !== 8) return;
+
+            // Manejo del botón "Atrás" físico del control remoto de la TV
+            if (e.key === 'Escape' || e.key === 'BackSpace' || e.keyCode === 8) {
+                if (viewStack.length > 1) {
+                    e.preventDefault();
+                    goBack();
+                    return;
+                }
+            }
+
+            // Obtener todos los elementos enfocables visibles en la vista actual
+            const currentViewId = viewStack[viewStack.length - 1];
+            const viewEl = document.getElementById(currentViewId);
+            const focusables = Array.from(viewEl.querySelectorAll('input, button, .movie-card, .genre-pill, .focusable, .btn-close'));
+            
+            if (focusables.length === 0) return;
+
+            let index = focusables.indexOf(active);
+
+            if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                let nextIdx = index + 1;
+                if (nextIdx < focusables.length) focusables[nextIdx].focus();
+            } 
+            else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                let prevIdx = index - 1;
+                if (prevIdx >= 0) focusables[prevIdx].focus();
+            } 
+            else if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                // Encontrar el elemento más cercano abajo usando la posición geométrica en pantalla
+                if (index === -1) {
+                    focusables[0].focus();
+                } else {
+                    let closest = findClosestElement(active, focusables, 'down');
+                    if (closest) closest.focus();
+                }
+            } 
+            else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                // Encontrar el elemento más cercano arriba geométricamente
+                if (index !== -1) {
+                    let closest = findClosestElement(active, focusables, 'up');
+                    if (closest) closest.focus();
+                }
+            }
+            else if (e.key === 'Enter' || e.keyCode === 13) {
+                // Simulación limpia de click al presionar el botón OK del control remoto
+                if (active && index !== -1) {
+                    active.click();
+                }
+            }
+        });
+
+        // Algoritmo de proximidad para saltar correctamente entre filas superiores (menús) y carátulas abajo
+        function findClosestElement(current, list, direction) {
+            const r1 = current.getBoundingClientRect();
+            let bestMatch = null;
+            let minDistance = Infinity;
+
+            list.forEach(el => {
+                if (el === current) return;
+                const r2 = el.getBoundingClientRect();
+                
+                if (direction === 'down' && r2.top >= r1.bottom - 5) {
+                    let dist = Math.abs(r2.left - r1.left) + (r2.top - r1.bottom);
+                    if (dist < minDistance) { minDistance = dist; bestMatch = el; }
+                }
+                else if (direction === 'up' && r2.bottom <= r1.top + 5) {
+                    let dist = Math.abs(r2.left - r1.left) + (r1.top - r2.bottom);
+                    if (dist < minDistance) { minDistance = dist; bestMatch = el; }
+                }
+            });
+            return bestMatch;
+        }
+
+        // Inicialización de la App
+        window.onload = () => {
+            renderMovies(movies);
+            // Pone el foco inicial en el primer elemento interactivo para guiar al control remoto de la TV
+            setTimeout(() => {
+                const firstPill = document.querySelector('.genre-pill');
+                if(firstPill) firstPill.focus();
+            }, 300);
+        };
     </script>
-
-    <div style="display: none; position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; background: linear-gradient(180deg, #141414 0%, #0d0d0d 100%); z-index: 9999; border-top: 1px solid rgba(255, 69, 0, 0.3); padding: 8px 0; box-shadow: 0 -5px 20px rgba(0,0,0,0.8);">
-        <p style="margin: 0 0 5px 0; font-size: 8px; color: #666; font-family: 'Segoe UI', Roboto, Helvetica, sans-serif; letter-spacing: 2px; font-weight: bold;">ANUNCIO PUBLICITARIO</p>
-        <a href="TU_LINK_DE_DESTINO_AQUÍ" target="_blank" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: space-between; background: rgba(255, 255, 255, 0.03); width: 340px; height: 56px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08); box-sizing: border-box; padding: 6px 10px; backdrop-filter: blur(10px); transition: all 0.3s ease;">
-            <div style="display: flex; align-items: center; text-align: left;">
-                <img src="https://m.media-amazon.com/images/S/pv-target-images/32296541f5f94f264e7b31c5dbe4d5a56a82cf306b2d22f5807b2154121e2231._UR1920,1080_SX624_FMjpg_.jpg" alt="Icono" style="width: 44px; height: 44px; border-radius: 6px; object-fit: cover; margin-right: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1);">
-                <div>
-                    <div style="color: #ffffff; font-family: 'Segoe UI', Roboto, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.3px; line-height: 1.2;">
-                        ¡Únete al canal oficial!
-                    </div>
-                    <div style="color: #ff551a; font-family: 'Segoe UI', Roboto, sans-serif; font-size: 10px; margin-top: 3px; font-weight: 500; opacity: 0.9;">
-                        Toca aquí para ver más estrenos
-                    </div>
-                </div>
-            </div>
-            <div style="background: #ff4500; color: #ffffff; font-family: 'Segoe UI', Roboto, sans-serif; font-size: 11px; font-weight: bold; padding: 6px 12px; border-radius: 20px; box-shadow: 0 2px 6px rgba(255, 69, 0, 0.4); text-transform: uppercase; letter-spacing: 0.5px;">
-                Ver
-            </div>
-        </a>
-    </div>
-
 </body>
 </html>
