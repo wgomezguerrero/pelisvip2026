@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1011534694014021"
+     crossorigin="anonymous"></script>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>PelisVIP Premium</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -81,7 +86,7 @@
     </header>
         
         <div class="genre-container">
-            <a href="tv.html" class="genre-pill btn-tv-special">📺 TV</a>
+            <a href="go:tv" class="genre-pill btn-tv-special">📺 TV</a>
             <div class="genre-pill active" onclick="filter('Todos', this)">🏠 Inicio</div>
             <div class="genre-pill" onclick="filter('Estrenos', this)">🔥 Estrenos</div>
             <div class="genre-pill" onclick="filter('Series', this)">📺 Series</div>
@@ -148,7 +153,11 @@
 
             </div>
 
-            <div style="background: linear-gradient(145deg, #16161a 0%, #0a0a0c 100%); padding: 20px; border-radius: 16px; border: 1px solid rgba(0, 113, 227, 0.25); box-shadow: 0 10px 30px rgba(0,0,0,0.7); position: relative; overflow: hidden;">
+
+
+
+
+            <div style="display: none; background: linear-gradient(145deg, #16161a 0%, #0a0a0c 100%); padding: 20px; border-radius: 16px; border: 1px solid rgba(0, 113, 227, 0.25); box-shadow: 0 10px 30px rgba(0,0,0,0.7); position: relative; overflow: hidden;">
                 <div style="display: flex; align-items: center; gap: 15px;">
                     <div style="background: rgba(0, 113, 227, 0.1); border: 1px solid rgba(0, 113, 227, 0.3); width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;">
                         ⚡
@@ -167,7 +176,7 @@
 
 
 
-            <div style="background: linear-gradient(145deg, #16161a 0%, #0a0a0c 100%); padding: 20px; border-radius: 16px; border: 1px solid rgba(0, 113, 227, 0.25); box-shadow: 0 10px 30px rgba(0,0,0,0.7); position: relative; overflow: hidden;">
+            <div style="display: none; background: linear-gradient(145deg, #16161a 0%, #0a0a0c 100%); padding: 20px; border-radius: 16px; border: 1px solid rgba(0, 113, 227, 0.25); box-shadow: 0 10px 30px rgba(0,0,0,0.7); position: relative; overflow: hidden;">
                 <div style="display: flex; align-items: center; gap: 15px;">
                     <div style="background: rgba(0, 113, 227, 0.1); border: 1px solid rgba(0, 113, 227, 0.3); width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;">
                         ⚡
@@ -216,9 +225,83 @@
         const movies = [
 
 
+// PELICULAS
 
 
 
+
+
+             { id: "PEL-90", title: "CAM 🇺🇸 Street Fighter", category: "Estrenos", genre: "Acción • Fantasía", img: getImg("https://www3.cuevana3.is/poster/street-fighter-1153576.jpg"), desc: "En 1993, los distanciados luchadores de Street Fighter, Ryu y Ken Masters, se ven obligados a volver a la acción cuando la misteriosa Chun-Li los recluta para el próximo Torneo Mundial de Guerreros.", year: "2026", duration: "1h 48m", quality: "", type: "movie", link: "https://ok.ru/videoembed/16327972096688" },
+ 
+             { id: "PEL-89", title: "HD 🇪🇸 Iván & Hadoum", category: "Estrenos", genre: "Drama • Romance", img: getImg("https://www3.cuevana3.is/poster/ivan-and-hadoum.jpg"), desc: "Iván se enamora de Hadoum en el invernadero donde trabajan. Sin embargo, su anhelado ascenso laboral interfiere en la relación, obligándole a decidir qué tipo de hombre quiere ser.", year: "2026", duration: "1h 38m", quality: "", type: "movie", link: "https://ok.ru/videoembed/16310608857776" },
+
+             { id: "PEL-88", title: "CAM 🇺🇸 Madre siniestra", category: "Estrenos", genre: "Terror • Suspenso", img: getImg("https://www3.cuevana3.is/poster/madre-siniestra.jpg"), desc: "Bela, una niña de 8 años que vive en un hogar con problemas matrimoniales, enfrenta a una entidad siniestra que sale de su clóset. La presencia, a quien llama “Otra Mamá”, se vuelve cada vez más amenazante para ella y su familia.", year: "2026", duration: "1h 24m", quality: "", type: "movie", link: "https://ok.ru/videoembed/16287391615664" },
+
+             { id: "PEL-87", title: "HD 🇲🇽 Scream 7", category: "Estrenos", genre: "Terror • Misterio", img: getImg("https://www3.cuevana3.is/poster/scream-7.jpg"), desc: "La tranquila y rehecha vida Sidney Prescott se cae a pedazos cuando Ghostface llega al pueblo. Sin embargo, sus peores temores se hacen realidad cuando su hija Tatum se convierte en la próxima víctima.", year: "2026", duration: "1h 56m", quality: "", type: "movie", link: "https://ok.ru/videoembed/16285292563120" },
+
+             { id: "PEL-86", title: "HD 🇲🇽 En directo", category: "Estrenos", genre: "Crimen • Suspenso", img: getImg("https://www3.cuevana3.is/poster/reporting-live.jpg"), desc: "Una reportera joven y su reticente cámara buscan una historia... y acaban formando parte de una red de extracción ilegal de arena dirigida por una despiadada organización mafiosa.", year: "2026", duration: "1h 56m", quality: "", type: "movie", link: "https://ok.ru/videoembed/16285196487344" },
+
+             { id: "PEL-85", title: "HD 🇲🇽 Un oscuro secreto", category: "Estrenos", genre: "Terror • Drama", img: getImg("https://www3.cuevana3.is/poster/un-oscuro-secreto-787747.jpg"), desc: "Samantha es invitada al mundo glamuroso de Zoe Shannon, CEO de la empresa de bienestar SHELL. Cuando los pacientes de SHELL comienzan a desaparecer, Samantha se da cuenta de que Zoe podría estar ocultando un oscuro secreto.", year: "2026", duration: "1h 41m", quality: "", type: "movie", link: "https://ok.ru/videoembed/16284942404272" },
+
+             { id: "PEL-84", title: "HD 🇲🇽 Legend of the White Dragon", category: "Estrenos", genre: "Acción • Fantasía", img: getImg("https://www3.cuevana3.is/poster/legend-of-the-white-dragon.jpg"), desc: "Tras el Aftermath, la ciudad quedó diezmada. Es un recordatorio de una gran batalla y la caída de los héroes. Como resultado de la muerte y la destrucción, la ciudad comenzó a ser conocida como Angel Graves.", year: "2026", duration: "2h 04m", quality: "", type: "movie", link: "https://ok.ru/videoembed/16242914298544" },
+
+             { id: "PEL-83", title: "HD 🇲🇽 Chica robada", category: "Estrenos", genre: "Acción • Suspenso", img: getImg("https://www3.cuevana3.is/poster/stolen-girl.jpg"), desc: "En 1993, Amina, la hija de seis años de Maureen, es sacada a escondidas del país por su exmarido, Karim. Tras años de intentos infructuosos por encontrarla, Maureen se cruza con un profesional que recupera niños secuestrados internacionalmente, quien promete ayudarla a encontrar a Amina a cambio de su colaboración.", year: "2025", duration: "1h 45m", quality: "", type: "movie", link: "https://ok.ru/videoembed/16231427541680" },
+
+             { id: "PEL-82", title: "HD 🇲🇽 La noche del demonio: Están entre nosotros", category: "Estrenos", genre: "Terror • Suspenso", img: getImg("https://www3.cuevana3.is/poster/la-noche-del-demonio-estan-entre-nosotros.jpg"), desc: "Un trío de acosadores se infiltra en un tranquilo suburbio y obliga a una nueva familia a entrar en el plano astral, donde descubren una verdad aterradora: el Más Allá se está filtrando al mundo real.", year: "2026", duration: "1h 46m", quality: "", type: "movie", link: "https://ok.ru/videoembed/16223052630704" },
+
+             { id: "PEL-81", title: "HD 🇲🇽 Spider-Man: Un nuevo día", category: "Estrenos", genre: "Acción • Aventura", img: getImg("https://www3.cuevana3.is/poster/spider-man-un-nuevo-dia.jpg"), desc: "A medida qué Spider-Man está en la cima de su carrera protegiendo la ciudad de Nueva York, una serie de crímenes inusuales lo arrastran a una red de misterios más grande de lo que jamás haya enfrentado.", year: "2026", duration: "2h 24m", quality: "", type: "movie", link: "https://drive.google.com/file/d/1nAsTUa1aSFCUFNWWHff6nrWSCha6jw59/preview" },
+
+             { id: "PEL-80", title: "HD 🇲🇽 Family Guy Happy Hell-o-ween", category: "Estrenos", genre: "Animación • Terror", img: getImg("https://www3.cuevana3.is/poster/family-guy-happy-hell-o-ween.jpg"), desc: "Brian y Stewie acaban en el infierno tras 24 temporadas de mal comportamiento y terminan al mando cuando consiguen sacar de quicio incluso al mismísimo diablo.", year: "2026", duration: "0h 23m", quality: "", type: "movie", link: "https://ok.ru/videoembed/16212551010992" },
+
+             { id: "PEL-79", title: "HD 🇲🇽 Coyote vs Acme", category: "Estrenos", genre: "Comedia • Aventura", img: getImg("https://www3.cuevana3.is/poster/coyote-vs-acme.jpg"), desc: "Luego de que los productos Acme le fallan demasiadas veces en su tenaz búsqueda del Correcaminos, Wile E. Coyote decide contratar a un abogado especializado en vallas publicitarias para demandar a Acme Corporation.", year: "2026", duration: "1h 42m", quality: "", type: "movie", link: "https://ok.ru/videoembed/16212306430640" },
+
+             { id: "PEL-78", title: "CAM 🇺🇸 El corazón de la bestia", category: "Estrenos", genre: "Suspenso • Aventura", img: getImg("https://www3.cuevana3.is/poster/el-corazon-de-la-bestia-1263337.jpg"), desc: "Tras un terrible accidente aéreo, el oficial de las Fuerzas Especiales James Belmont y su perro de combate, Odin, quedan varados en lo profundo de la naturaleza salvaje de Alaska. Juntos, se ven obligados a librar una brutal lucha por la supervivencia contra los elementos.", year: "2026", duration: "1h 34m", quality: "", type: "movie", link: "https://ok.ru/videoembed/16212253674160" },
+
+            { id: "PEL-77", title: "CAM 🇺🇸 La isla olvidada", category: "Estrenos", genre: "Animación • Aventura", img: getImg("https://www3.cuevana3.is/poster/la-isla-olvidada.jpg"), desc: "Jo y Raissa se encuentran varadas en el fantástico mundo de la isla olvidada de Nakali. Descubren que su única forma de volver a casa podría ser a costa de toda una vida de recuerdos y emociones.", year: "2026", duration: "1h 39m", quality: "", type: "movie", link: "https://ok.ru/videoembed/16210640046768" },
+
+            { id: "PEL-76", title: "CAM 🇺🇸 El último gran golpe", category: "Estrenos", genre: "Acción • Suspenso", img: getImg("https://www3.cuevana3.is/poster/el-ultimo-gran-golpe.jpg"), desc: "El dueño de un club nocturno está a punto de dejar atrás su peligroso pasado para volver a vivir con su novia. Cuando unos pistoleros enmascarados le roban y se ve acorralado por despiadados cárteles, llega un misterioso hombre interesado en comprar el negocio.", year: "2026", duration: "1h 35m", quality: "", type: "movie", link: "https://drive.google.com/file/d/1y8NirIV3lz63uttLEmeE3S3CftWX5043/preview" },
+
+            { id: "PEL-75", title: "CAM 🇺🇸 Vértigo 2", category: "Estrenos", genre: "Acción • Suspenso", img: getImg("https://www3.cuevana3.is/poster/vertigo-2-punto-muerto.jpg"), desc: "Tras sobrevivir a una experiencia extrema, un nuevo grupo de jóvenes se enfrenta a un desafío aún más peligroso en un entorno remoto en Tailandia.", year: "2026", duration: "1h 30m", quality: "", type: "movie", link: "https://ok.ru/videoembed/16209673456304" },
+
+            { id: "PEL-74", title: "HD 🇲🇽 Zip Wire", category: "Estrenos", genre: "Acción • Suspenso", img: getImg("https://www3.cuevana3.is/poster/zip-wire.jpg"), desc: "Cuando le roban su revolucionario descubrimiento farmacéutico y asesinan a su compañero, la investigadora Amy debe enfrentarse a su miedo a las alturas para escapar de unos atacantes sin escrúpulos, siendo la única vía de salvación una traicionera pasarela aérea.", year: "2026", duration: "1h 35m", quality: "", type: "movie", link: "https://ok.ru/videoembed/16201908095664" },
+
+            { id: "PEL-73", title: "HD 🇲🇽 Siete francotiradores", category: "Estrenos", genre: "Acción • Suspenso", img: getImg("https://www3.cuevana3.is/poster/seven-snipers.jpg"), desc: "Kris Hendricks, una francotiradora de élite retirada, intenta dejar atrás su violento pasado y llevar una vida tranquila junto a su hija adolescente en un aislado rancho del interior de Australia. Sin embargo, la paz se destruye cuando un despiadado señor de la guerra de su pasado regresa buscando venganza.", year: "2026", duration: "1h 27m", quality: "", type: "movie", link: "https://ok.ru/videoembed/16196883909296" },
+
+            { id: "PEL-72", title: "HD 🇲🇽 No dejes a los niños solos", category: "Estrenos", genre: "Drama • Terror", img: getImg("https://www3.cuevana3.is/poster/no-dejes-a-los-ninos-solos.jpg"), desc: "Por una emergencia de trabajo, Catalina Camacho, una joven y reciente viuda, se ve obligada a dejar a sus hijos a solas por unas cuantas horas. Esa noche, y con la casa para ellos solos, Matías y Emiliano (de diez y siete años) se dan vuelo desempacando cajas para desenterrar su preciada consola de videojuegos.", year: "2026", duration: "1h 37m", quality: "", type: "movie", link: "https://ok.ru/videoembed/16196522478256" },
+
+            { id: "PEL-71", title: "HD 🇲🇽 La negociación", category: "Estrenos", genre: "Drama • Crimen", img: getImg("https://www3.cuevana3.is/poster/dead-mans-wire.jpg"), desc: "Recrea la historia real del secuestro de 1977 que convirtió a Tony Kiritsis, un aspirante a empresario de Indianápolis, en un excéntrico héroe popular proscrito.", year: "2026", duration: "1h 45m", quality: "", type: "movie", link: "https://ok.ru/videoembed/16190943136432" },
+
+            { id: "PEL-70", title: "HD 🇲🇽 Las cartas de la vida", category: "Estrenos", genre: "Drama • Romance", img: getImg("https://www3.cuevana3.is/poster/doing-life.jpg"), desc: "Cuando Anika, una joven madre soltera que lucha por mantener unida a su familia, comienza a intercambiar cartas con Carousel, un recluso que cumple condena, su extraño vínculo a distancia se transforma en algo totalmente inesperado.", year: "2026", duration: "1h 48m", quality: "", type: "movie", link: "https://ok.ru/videoembed/16190440999600" },
+
+            { id: "PEL-69", title: "HD 🇲🇽 Encuentra a tus amigas", category: "Estrenos", genre: "Suspenso • Crimen", img: getImg("https://www3.cuevana3.is/poster/find-your-friends.jpg"), desc: "Una visión siniestra de la cultura de fiesta de los veinteañeros que revela la oscuridad oculta tras una fachada despreocupada. Lo que comienza como un viaje desenfrenado de amigas se torna peligroso cuando unos lugareños hostiles intensifican la tensión y aflora un trauma del pasado de Amber. A medida que el grupo se fractura debido a dinámicas tóxicas, su divertida escapada se transforma en una pesadilla impulsada por la venganza.", year: "2026", duration: "1h 32m", quality: "", type: "movie", link: "https://ok.ru/videoembed/16190252386992" },
+
+            { id: "PEL-68", title: "HD 🇲🇽 Volver a los 17", category: "Estrenos", genre: "Comedia • Romance", img: getImg("https://www3.cuevana3.is/poster/volver-a-los-17.jpg"), desc: "Pipe es un adulto perdedor que toda la vida se ha arrepentido de nunca intentar conquistar a la chica de sus sueños: Amalia Braun, cuando ambos iban en la secundaria años atrás. Por esas cosas del destino, Pipe y Amalia coinciden en la actualidad y charlan sobre el pasado, donde ella le confiesa que durante la época escolar ella estuvo", year: "2026", duration: "1h 37m", quality: "", type: "movie", link: "https://ok.ru/videoembed/16189552331440" },
+
+            { id: "PEL-67", title: "HD 🇲🇽 Ninja Wars: BlackFox vs Shogun's Ninja", category: "Estrenos", genre: "Acción • Historia", img: getImg("https://www3.cuevana3.is/poster/ninja-wars-blackfox-vs-shoguns-ninja.jpg"), desc: "La historia se desata a raíz de una investigación sobre el culto misterioso de -El Loto Blanco-, sospechoso de planear una rebelión a gran escala en contra del Shogunato.", year: "2026", duration: "1h 40m", quality: "", type: "movie", link: "https://ok.ru/videoembed/16188919057072" },           
+ 
+            { id: "PEL-66", title: "HD 🇲🇽 Ricos sin dinero", category: "Estrenos", genre: "Comedia • Drama", img: getImg("https://www3.cuevana3.is/poster/almhaytyh.jpg"), desc: "Los AlThahabi siempre han presumido de dinero y estatus. Pero, cuando descubren que no son tan ricos como creían, tienen que seguir aparentándolo para sobrevivir.", year: "2026", duration: "1h 38m", quality: "", type: "movie", link: "https://ok.ru/videoembed/16188849851056" },
+
+            { id: "PEL-65", title: "HD 🇲🇽 Mononoke", category: "Estrenos", genre: "Animación • Fantasía", img: getImg("https://www3.cuevana3.is/poster/mononoke-the-movie-chapter-iii-the-curse-of-the-serpent.jpg"), desc: "Tras el regreso de una frágil paz al palacio interior, un nuevo terror se enrosca bajo sus cimientos. Cuando la Emperatriz muere desesperada tras dar a luz a un heredero, un resentimiento profundo y ancestral despierta. El Ōoku se estremece con temblores antinaturales, escamas caen de la nada y una doncella aparece muerta, retorcida com", year: "2026", duration: "1h 29m", quality: "", type: "movie", link: "https://ok.ru/videoembed/16168311458480" },
+
+            { id: "PEL-64", title: "HD 🇲🇽 Rebelión en la granja", category: "Estrenos", genre: "Animación • Comedia", img: getImg("https://www3.cuevana3.is/poster/rebelion-en-la-granja.jpg"), desc: "Un grupo de animales se rebelan contra sus dueños y toman el poder de la granja. Nueva adaptación del clásico de George Orwell.", year: "2026", duration: "1h 34m", quality: "", type: "movie", link: "https://ok.ru/videoembed/16168240286384" },
+
+            { id: "PEL-63", title: "HD 🇲🇽 Gente que conocemos en vacaciones", category: "Estrenos", genre: "Romance • Comedia", img: getImg("https://www3.cuevana3.is/poster/gente-que-conocemos-en-vacaciones.jpg"), desc: "Poppy es espontánea. Alex necesita un plan para todo. Tras años de viajar juntos, estos amigos muy distintos entre sí se preguntan si podrían ser la pareja perfecta.", year: "2026", duration: "1h 57m", quality: "", type: "movie", link: "https://ok.ru/videoembed/16168193231536" },
+
+            { id: "PEL-62", title: "HD 🇪🇸 los Legendarios", category: "Estrenos", genre: "Aventura • Animada", img: getImg("https://image.tmdb.org/t/p/w200/AlfndBQucnWC7igEIG2L0sk6tiF.jpg"), desc: "Son valientes, intrépidos e indomables... ¡y se han convertido en niños! Mientras luchaban contra el terrible hechicero Darkhell, los héroes oficiales de Alysia —«Los Legendarios»— rompieron accidentalmente la piedra Jovenia, la de la eterna juventud.", year: "2026", duration: "1h 27m", quality: "", type: "movie", link: "https://ok.ru/videoembed/16157519317680" },
+
+            { id: "PEL-61", title: "HD 🇲🇽 UNABOMBER", category: "Estrenos", genre: "Drama • Suspenso", img: getImg("https://image.tmdb.org/t/p/w200/39aMkR8Y5vhCG9dTkjiqRl8AVqp.jpg"), desc: "En este drama inspirado en hechos reales, el FBI le da caza a Ted Kaczynski, prodigio de Harvard y víctima de un experimento, que se ha convertido en el Unabomber.", year: "2026", duration: "1h 40m", quality: "", type: "movie", link: "https://ok.ru/videoembed/16145788570288" },
+
+            { id: "PEL-60", title: "HD 🇪🇸 El club Gourmet", category: "Estrenos", genre: "Comedia • Familia", img: getImg("https://image.tmdb.org/t/p/w200/eULl5cGe87xfCNpa8e74nepIQPB.jpg"), desc: "Las tres amigas —Marie, Berling y Vanja— están de vuelta en casa. Se han mudado juntas a una casa grande y hermosa, de techos altos, donde organizan una cena semanal. Marie se adapta a su nueva vida como recién divorciada y Vanja, ahora abuela, cuida tanto de su hijo como de su nieto, mientras que Berling se ha visto obligada a jubilarse. Sin embargo, con su habitual e impresionante energía, las tres mujeres —lideradas por Berling— deciden organizar el mayor festival de productos locales de Fionia.", year: "2026", duration: "1h 29m", quality: "", type: "movie", link: "https://ok.ru/videoembed/16145721395888" },
+
+            { id: "PEL-59", title: "HD 🇲🇽 Licencia para Robar", category: "Estrenos", genre: "Comedia • Aventura", img: getImg("https://image.tmdb.org/t/p/w200/fX5HV8LC2tulHI2GT9Ar8WVFyg.jpg"), desc: "Jeremy, estudiante de último curso de instituto, no quiere cortar con su novia, Samantha, que ya está en la universidad. Cuando ella le llama borracha, él piensa que lo va a dejar y roba un coche de autoescuela con tres compañeros para ir a Chapel Hill y reconquistarla. A lo largo de 24 caóticas horas, los persiguen agentes de seguridad, delincuentes y sus propias malas decisiones.", year: "2026", duration: "1h 43m", quality: "", type: "movie", link: "https://ok.ru/videoembed/15103637392048" },
+
+            { id: "PEL-58", title: "HD 🇪🇸 Hermanito", category: "Estrenos", genre: "Comedia • Aventura", img: getImg("https://image.tmdb.org/t/p/w200/s8mudAYQcHmVoFSamqyv1Ron527.jpg"), desc: "La vida perfecta de un impasible agente inmobiliario da un vuelco radical cuando su adorable y caótico «hermanito» llega para sacudir su existencia.", year: "2026", duration: "1h 40m", quality: "", type: "movie", link: "https://ok.ru/videoembed/15103550491312" },
+
+            { id: "PEL-57", title: "CAM 🇲🇽 Supergirl", category: "Estrenos", genre: "Acción • Aventura", img: getImg("https://image.tmdb.org/t/p/w200/diEz9JG1UHEDTN0Yeri5sJZD7PL.jpg"), desc: "Mientras celebra su cumpleaños número 21, Kara Zor-El viaja por la galaxia con su perro Krypto, durante el cual conoce a la joven Ruthye Marye Knoll y emprende una -búsqueda asesina de venganza-.", year: "2026", duration: "1h 41m", quality: "", type: "movie", link: "https://ok.ru/videoembed/15103484168880" },
+
+            { id: "PEL-56", title: "HD 🇪🇸 El mal", category: "Estrenos", genre: "Suspenso • Terror", img: getImg("https://image.tmdb.org/t/p/w200/fZWqXuy6UAgnc9ySFyZhXaB2DoR.jpg"), desc: "Una ambiciosa periodista es contactada por un inquietante personaje que le propone obtener el ansiado éxito escribiendo el libro sobre su talento: el de el mayor asesino de la historia.", year: "2026", duration: "2h 00m", quality: "", type: "movie", link: "https://ok.ru/videoembed/15103298964144" },
+
+            { id: "PEL-55", title: "HD 🇲🇽 Familia a la deriva", category: "Estrenos", genre: "Comedia • Familia", img: getImg("https://image.tmdb.org/t/p/w200/eH2FvInHc4hmOJQxdxMcVm8XNty.jpg"), desc: "Gonzalo Suárez, es el carismático dueño y vendedor de Suárez Seminuevos, una agencia de autos usados en Ciudad de México. Su vida gira en torno a cerrar ventas y sortear problemas, dejando en segundo plano a sus cuatro hijos de dos matrimonios distintos.", year: "2026", duration: "1h 38m", quality: "", type: "movie", link: "https://ok.ru/videoembed/15075201452720" },
 
             { id: "PEL-54", title: "HD 🇲🇽 Las lineas discontinuas", category: "Estrenos", genre: "Romance • Drama", img: getImg("https://image.tmdb.org/t/p/w200/1B6uSLpq7kqhwF6lQVtkfFXMwdZ.jpg"), desc: "Bea es una mujer de 50 años que se está separando de su marido. El día que tiene que abandonar la casa donde ha vivido los últimos veinte años, llega y encuentra todo patas arriba y a uno de los ladrones durmiendo en su cama. Denís es un hombre trans de 28 años que, a pesar de haber estudiado una carrera, lucha contra la inseguridad laboral y la falta de oportunidades. Tras pasar tres días juntos, cada uno debe seguir su propio camino. Cuando retoman sus vidas, ya no son los mismos.", year: "2026", duration: "1h 24m", quality: "", type: "movie", link: "https://ok.ru/videoembed/15025497049776" },
 
@@ -268,7 +351,7 @@
 
             { id: "PEL-31", title: "HD 🇲🇽 México 86", category: "Estrenos", genre: "Comedia • Drama", img: getImg("https://image.tmdb.org/t/p/w200/ie0evW3npWrB25prNSKOdlEamSd.jpg"), desc: "Atrevimiento, locura y puro ingenio mexicano. En 1986, México fue sede del campeonato de fútbol más importante del mundo contra todo pronóstico. ¿Cómo se logró esa hazaña?", year: "2026", duration: "1h 37m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14797298338480" },
 
-            { id: "PEL-30", title: "HD 🇲🇽 Scary Movie: Terroríficamente incorrecta", category: "Estrenos", genre: "Comedia • Terror", img: getImg("https://pics.filmaffinity.com/scary_movie-679505054-large.jpg"), desc: "Veintiséis años después de su primer encuentro con un asesino enmascarado, los miembros que quedan del grupo de entonces —Shorty Meeks (Marlon Wayans), Ray Wilkins (Shawn Wayans), Cindy Campbell (Anna Faris) y Brenda Meeks (Regina Hall)— vuelven a encontrarse en peligro de muerte. El asesino, también conocido como Ghostface, parece haberlos vuelto a poner en su punto de mira y retoma los acontecimientos de aquel entonces.", year: "2026", duration: "1h 20m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14807285631664" },
+            { id: "PEL-30", title: "HD 🇲🇽 Scary Movie: Terroríficamente incorrecta", category: "Estrenos", genre: "Comedia • Terror", img: getImg("https://pics.filmaffinity.com/scary_movie-679505054-large.jpg"), desc: "Veintiséis años después de su primer encuentro con un asesino enmascarado, los miembros que quedan del grupo de entonces —Shorty Meeks (Marlon Wayans), Ray Wilkins (Shawn Wayans), Cindy Campbell (Anna Faris) y Brenda Meeks (Regina Hall)— vuelven a encontrarse en peligro de muerte. El asesino, también conocido como Ghostface, parece haberlos vuelto a poner en su punto de mira y retoma los acontecimientos de aquel entonces.", year: "2026", duration: "1h 25m", quality: "", type: "movie", link: "https://ok.ru/videoembed/15047739640496" },
 
             { id: "PEL-29", title: "Marty Supremo", category: "Estrenos", genre: "Drama • Misterio", img: getImg("https://image.tmdb.org/t/p/original/jctiZ1I2p4b6mceR85QxYhgs4Ft.jpg"), desc: "Muestra el viaje de Marty Reisman, un buscavidas convertido en campeón de ping-pong que se convirtió en el más veterano en ganar una competición nacional, con 67 años.", year: "2026", duration: "2h 24m", quality: "", type: "movie", link: "https://ok.ru/videoembed/14719105567408" },
 
@@ -312,7 +395,7 @@
 
             { id: "PEL-9", title: "Capture", category: "Estrenos", genre: "Terror", img: getImg("https://cuevana.gs/wp-content/uploads/thumbs/09dd1b820579a37cca1ce503c01e7398_hd.webp"), desc: "Aún no hemos añadido un resumen para este titulo. Estamos trabajando para agregarla pronto.", year: "2026", duration: "1h 25m", quality: "CAM", type: "movie", link: "https://ok.ru/videoembed/14634363390640" },
 
-            { id: "PEL-7", title: "En La Zona Gris", category: "Estrenos", genre: "Acción - Suspenso", img: getImg("https://image.tmdb.org/t/p/w200/yfgquGqeT6DtdsIzPPzTLRABBy0.jpg"), desc: "Gira en torno a dos especialistas en extracción que tienen que designar una ruta de escape para una negociadora de alto rango.", year: "2026", duration: "1h 38m", quality: "CAM", type: "movie", link: "https://ok.ru/videoembed/14557837068976" },
+            { id: "PEL-7", title: "En La Zona Gris", category: "Estrenos", genre: "Acción - Suspenso", img: getImg("https://image.tmdb.org/t/p/w200/yfgquGqeT6DtdsIzPPzTLRABBy0.jpg"), desc: "Gira en torno a dos especialistas en extracción que tienen que designar una ruta de escape para una negociadora de alto rango.", year: "2026", duration: "1h 38m", quality: "CAM", type: "movie", link: "https://drive.google.com/file/d/1mlYgTh7jZXq1ljaJnj2RI63T0kE45DjU/preview" },
 
             { id: "PEL-6", title: "El diablo viste a la moda 2", category: "Estrenos", genre: "Comedia - Drama", img: getImg("https://cuevana.gs/wp-content/uploads/thumbs/7aba5cec8b63b77c0f80d898f6ffcb75_hd.webp"), desc: "Sigue la lucha de Miranda Priestly contra Emily Charlton, su ex asistente convertida en ejecutiva rival.", year: "2026", duration: "1h 51m", quality: "CAM", type: "movie", link: "https://drive.google.com/file/d/1N6hiCObSkwXBXKxTreZ-6XQSzkgfHORl/preview" },
 
@@ -328,6 +411,15 @@
 
             
              
+
+
+
+
+
+//SERIES
+
+
+
 
 
 
@@ -737,6 +829,14 @@
 
 
 
+//DORAMAS
+
+
+
+
+
+
+
 
 
             { 
@@ -965,7 +1065,20 @@
 
 
 
+//DOCUMENTALES
 
+
+
+
+
+
+
+
+            { id: "DOC-12", title: "HD 🇲🇽 Una historia de gorilas contada por David Attenborough", category: "Documentales", genre: "Familia", img: getImg("https://www3.cuevana3.is/poster/una-historia-de-gorilas-contada-por-david-attenborough.jpg"), desc: "El experimentado naturalista David Attenborough narra la historia de un sorprendente grupo de gorilas, desde su primer encuentro en la década de los setenta hasta la actualidad.", year: "2026", duration: "1h 17m", quality: "HD", type: "movie", link: "https://ok.ru/videoembed/16285894576816" },
+
+            { id: "DOC-11", title: "HD 🇲🇽 Instinto Maternal", category: "Documentales", genre: "Familia", img: getImg("https://www3.cuevana3.is/poster/instinto-maternal.jpg"), desc: "La policía detiene a una mujer que afirma que acaba de parir, pero ni el bebé ni la sangre son de ella. Este documental sobre un crimen real revela esta retorcida historia.", year: "2026", duration: "1h 36m", quality: "HD", type: "movie", link: "https://ok.ru/videoembed/16168162298544" },
+
+            { id: "DOC-10", title: "HD 🇪🇸 The Welcome Table", category: "Documentales", genre: "Clima", img: getImg("https://image.tmdb.org/t/p/w200/8cOEREMN6WF4Vf6IgBLU3AqmbeN.jpg"), desc: "Relata la historia de refugiados climáticos en seis continentes, celebrando las voces y experiencias de personas que viven en la primera línea de la crisis climática, desplazadas de sus hogares por desastres climáticos.", year: "2026", duration: "2h 10m", quality: "HD", type: "movie", link: "https://ok.ru/videoembed/15103388551856" },
 
             { id: "DOC-9", title: "HD 🇪🇸 McCartney: La búsqueda del bajo perdido 8.4", category: "Documentales", genre: "Música", img: getImg("https://image.tmdb.org/t/p/w200/uC6Zx4uy4C4eGcrJZk7iN34G8Uv.jpg"), desc: "Durante más de cincuenta años, la desaparición del bajo Höfner original de Paul McCartney ha sido uno de los misterios más persistentes del rock and roll. La búsqueda del bajo perdido narra la extraordinaria historia de este icónico instrumento y la incansable búsqueda de sus fans para encontrarlo.", year: "2026", duration: "1h 27m", quality: "HD", type: "movie", link: "https://ok.ru/videoembed/15025513499312" },
 
@@ -973,7 +1086,7 @@
 
             { id: "DOC-7", title: "HD 🇪🇸 El asesinato de Rachel Nickell", category: "Documentales", genre: "Crimen", img: getImg("https://image.tmdb.org/t/p/w200/ibTNWrpUGsSuv7PbVRIgr97jDVs.jpg"), desc: "Asesinan a una madre joven a plena luz del día y frente a su hijito en Wimbledon Common, Londres. Este documental examina este caso de homicidio que quedó sin resolver por años.", year: "2026", duration: "1h 36m", quality: "HD", type: "movie", link: "https://ok.ru/videoembed/14791561710256" },
 
-            { id: "DOC-6", title: "En busca de Harry: El arte detrás de la magia", category: "Documentales", genre: "Historia", img: getImg("https://image.tmdb.org/t/p/w200/v9kNDfpOG7o2W6mHfUltypvZEPa.jpg"), desc: "Narrado por Nick Frost, que interpreta a Hagrid en Harry Potter de HBO, y con la participación de miembros clave del reparto directamente desde la mesa de profesores, como John Lithgow, Janet McTeer y Paapa Essiedu, este especial exclusivo promete una mirada al interior de la escala épica y el cuidado meticuloso que hay detrás de la nueva serie.", year: "2026", duration: "0h 25m", quality: "HD", type: "movie", link: "https://ok.ru/videoembed/14571602840240" },
+            { id: "DOC-6", title: "En busca de Harry: El arte detrás de la magia", category: "Documentales", genre: "Historia", img: getImg("https://image.tmdb.org/t/p/w200/v9kNDfpOG7o2W6mHfUltypvZEPa.jpg"), desc: "Narrado por Nick Frost, que interpreta a Hagrid en Harry Potter de HBO, y con la participación de miembros clave del reparto directamente desde la mesa de profesores, como John Lithgow, Janet McTeer y Paapa Essiedu, este especial exclusivo promete una mirada al interior de la escala épica y el cuidado meticuloso que hay detrás de la nueva serie.", year: "2026", duration: "0h 25m", quality: "HD", type: "movie", link: "https://ok.ru/videoembed/15075558886064" },
 
             { id: "DOC-5", title: "Al descubierto: El tiroteo en Hawthorne Hill", category: "Documentales", genre: "Drama", img: getImg("https://image.tmdb.org/t/p/w200/6K0qTMozHAzzYVsWQrXxmqCC5wY.jpg"), desc: "Una discusión acalorada entre un entrenador de equitación y su alumna desemboca en un acto de violencia atroz. Un documental sobre crímenes reales repleto de giros.", year: "2026", duration: "1h 13m", quality: "HD", type: "movie", link: "https://ok.ru/videoembed/14571602643632" },
 
@@ -1104,7 +1217,7 @@
         }
 
         function shareApp() {
-            const msg = encodeURIComponent("🎬 ¡Mira lo último del cine y series gratis en PelisVIP! 🍿\n\nDescárgala aquí: http://aftv.news/8688335");
+            const msg = encodeURIComponent("🎬 ¡Mira lo último de la TV PREMIUM, cine y series gratis en PelisVIP! 🍿\n\npíde la APP aquí es GRATIS: +593962238558");
             window.open(`https://api.whatsapp.com/send?text=${msg}`);
         }
         
